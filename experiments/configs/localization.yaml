@@ -1,0 +1,37 @@
+experiment_name: localization
+description: "Evaluates subpixel localization accuracy across full sensor grid and subpixel offsets."
+
+camera:
+  width: 1920
+  height: 1080
+  fx: 2000.0
+  fy: 2000.0
+  cx: 960.0
+  cy: 540.0
+  fps: 60.0
+
+generator:
+  amplitude: 150.0
+  background_level: 10.0
+  sigma_x: 2.0
+  sigma_y: 2.0
+  snr_db: 30.0
+  psf_type: "gaussian"
+  range_km: 5.0
+  attenuation_alpha: 0.0001
+  atmospheric_condition: "clear"
+
+positions:
+  - [960.0, 540.0]
+  - [100.0, 100.0]
+  - [1820.0, 100.0]
+  - [100.0, 980.0]
+  - [1820.0, 980.0]
+  - [923.37, 511.82]
+  - [100.13, 100.72]
+  - [250.47, 400.21]
+  - [500.91, 321.37]
+  - [1432.85, 789.14]
+
+trials_per_position: 50
+seed: 42

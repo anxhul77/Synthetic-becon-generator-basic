@@ -1,0 +1,23 @@
+exp00:
+  name: "Ground-Truth Beacon Generator Validation"
+  num_positions: 10
+  num_trials_per_position: 2  # 2 algorithms per position => 20 total frame trials
+  total_trials: 20
+  seed: 42
+  snr_db: 60.0
+  amplitude: 150.0
+  sigma_x: 2.0
+  sigma_y: 2.0
+  background_level: 10.0
+  psf_type: "gaussian"
+  positions:
+    - [960.0, 540.0]    # center
+    - [100.0, 100.0]    # top-left
+    - [1820.0, 100.0]   # top-right
+    - [100.0, 980.0]    # bottom-left
+    - [1820.0, 980.0]   # bottom-right
+    - [923.37, 511.82]  # subpixel 1
+    - [100.13, 100.72]  # subpixel 2
+    - [250.47, 400.21]  # subpixel 3
+    - [500.91, 321.37]  # subpixel 4
+    - [1432.85, 789.14] # subpixel 5

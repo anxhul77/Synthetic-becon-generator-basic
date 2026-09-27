@@ -1,0 +1,41 @@
+experiment_name: background
+description: "Evaluates algorithm performance under varying baseline levels and spatial intensity gradients."
+
+camera:
+  width: 1920
+  height: 1080
+  fx: 2000.0
+  fy: 2000.0
+  cx: 960.0
+  cy: 540.0
+  fps: 60.0
+
+generator:
+  amplitude: 150.0
+  sigma_x: 2.0
+  sigma_y: 2.0
+  snr_db: 30.0
+  psf_type: "gaussian"
+  range_km: 5.0
+  attenuation_alpha: 0.0001
+  atmospheric_condition: "clear"
+
+sweep:
+  background_types:
+    - type: "uniform"
+      baseline_level: 5.0
+    - type: "uniform"
+      baseline_level: 20.0
+    - type: "uniform"
+      baseline_level: 50.0
+    - type: "gradient"
+      baseline_level: 10.0
+      gradient_a: 0.01
+      gradient_b: 0.005
+    - type: "gradient"
+      baseline_level: 10.0
+      gradient_a: 0.05
+      gradient_b: 0.02
+
+trials_per_setting: 50
+seed: 42

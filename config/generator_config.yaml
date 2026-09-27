@@ -1,0 +1,29 @@
+camera:
+  width: 1920
+  height: 1080
+  fx: 2000.0
+  fy: 2000.0
+  cx: 960.0
+  cy: 540.0
+  fps: 60.0
+
+beacon:
+  amplitude: 150.0
+  sigma_x: 2.0
+  sigma_y: 2.0
+  psf_type: "gaussian"
+
+background:
+  type: "uniform"
+  baseline_level: 10.0
+  gradient_a: 0.0
+  gradient_b: 0.0
+
+noise:
+  type: "gaussian"
+  snr_db: 60.0
+
+atmosphere:
+  attenuation_alpha: 0.0001
+  range_km: 5.0
+  condition: "clear"

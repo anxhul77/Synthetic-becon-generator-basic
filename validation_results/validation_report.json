@@ -1,0 +1,142 @@
+[
+  {
+    "test_name": "camera_center_angle",
+    "status": "PASS",
+    "measured_value": 0.0,
+    "expected_value": 0.0,
+    "error": 0.0,
+    "tolerance": 1e-10,
+    "timestamp": "2026-09-27T09:22:56.728236+00:00",
+    "seed": 0
+  },
+  {
+    "test_name": "camera_pixel_angle_roundtrip",
+    "status": "PASS",
+    "measured_value": 0.0,
+    "expected_value": 0.0,
+    "error": 0.0,
+    "tolerance": 1e-10,
+    "timestamp": "2026-09-27T09:22:56.728236+00:00",
+    "seed": 0
+  },
+  {
+    "test_name": "camera_fov_x_equation",
+    "status": "PASS",
+    "measured_value": 51.28201164861056,
+    "expected_value": 51.28201164861056,
+    "error": 0.0,
+    "tolerance": 1e-06,
+    "timestamp": "2026-09-27T09:22:56.728236+00:00",
+    "seed": 0
+  },
+  {
+    "test_name": "psf_gaussian_peak",
+    "status": "PASS",
+    "measured_value": 150.0,
+    "expected_value": 150.0,
+    "error": 0.0,
+    "tolerance": 1e-10,
+    "timestamp": "2026-09-27T09:22:56.728236+00:00",
+    "seed": 0
+  },
+  {
+    "test_name": "psf_gaussian_one_sigma",
+    "status": "PASS",
+    "measured_value": 90.97959895689502,
+    "expected_value": 90.97959895689502,
+    "error": 0.0,
+    "tolerance": 1e-10,
+    "timestamp": "2026-09-27T09:22:56.728236+00:00",
+    "seed": 0
+  },
+  {
+    "test_name": "background_uniform_baseline",
+    "status": "PASS",
+    "measured_value": 10.0,
+    "expected_value": 10.0,
+    "error": 0.0,
+    "tolerance": 1e-10,
+    "timestamp": "2026-09-27T09:22:56.734425+00:00",
+    "seed": 0
+  },
+  {
+    "test_name": "background_gradient_corner",
+    "status": "PASS",
+    "measured_value": 12.97,
+    "expected_value": 12.97,
+    "error": 0.0,
+    "tolerance": 1e-10,
+    "timestamp": "2026-09-27T09:22:56.734425+00:00",
+    "seed": 0
+  },
+  {
+    "test_name": "atmosphere_transmittance_beer_lambert",
+    "status": "PASS",
+    "measured_value": 0.9995001249791693,
+    "expected_value": 0.9995001249791693,
+    "error": 0.0,
+    "tolerance": 1e-10,
+    "timestamp": "2026-09-27T09:22:56.734425+00:00",
+    "seed": 0
+  },
+  {
+    "test_name": "noise_sigma_equation",
+    "status": "PASS",
+    "measured_value": 4.743416490252569,
+    "expected_value": 4.743416490252569,
+    "error": 0.0,
+    "tolerance": 1e-10,
+    "timestamp": "2026-09-27T09:22:56.734425+00:00",
+    "seed": 0
+  },
+  {
+    "test_name": "noise_statistical_mean",
+    "status": "PASS",
+    "measured_value": 0.00046249495635009794,
+    "expected_value": 0.0,
+    "error": 0.00046249495635009794,
+    "tolerance": 0.05,
+    "timestamp": "2026-09-27T09:22:56.758738+00:00",
+    "seed": 42
+  },
+  {
+    "test_name": "noise_statistical_std",
+    "status": "PASS",
+    "measured_value": 4.7457058681576045,
+    "expected_value": 4.743416490252569,
+    "error": 0.0022893779050354723,
+    "tolerance": 0.23717082451262847,
+    "timestamp": "2026-09-27T09:22:56.758738+00:00",
+    "seed": 42
+  },
+  {
+    "test_name": "reproducibility_identical_seed",
+    "status": "PASS",
+    "measured_value": 0.0,
+    "expected_value": 0.0,
+    "error": 0.0,
+    "tolerance": 0.0,
+    "timestamp": "2026-09-27T09:22:57.071015+00:00",
+    "seed": 12345
+  },
+  {
+    "test_name": "ground_truth_subpixel_x",
+    "status": "PASS",
+    "measured_value": 923.37,
+    "expected_value": 923.37,
+    "error": 0.0,
+    "tolerance": 1e-10,
+    "timestamp": "2026-09-27T09:22:57.214029+00:00",
+    "seed": 42
+  },
+  {
+    "test_name": "ground_truth_theta_x_analytical",
+    "status": "PASS",
+    "measured_value": -0.018312952555591476,
+    "expected_value": -0.018312952555591476,
+    "error": 0.0,
+    "tolerance": 1e-10,
+    "timestamp": "2026-09-27T09:22:57.214029+00:00",
+    "seed": 42
+  }
+]

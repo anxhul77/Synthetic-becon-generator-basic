@@ -1,0 +1,24 @@
+==================================================
+SYNTHETIC OPTICAL BEACON GENERATOR VALIDATION SUMMARY
+==================================================
+Timestamp: 2026-09-27T09:22:57.226314+00:00
+Total Validation Tests Executed: 14
+Passed: 14
+Failed: 0
+Overall Status: PASSED
+--------------------------------------------------
+TEST RESULTS SUMMARY:
+  - camera_center_angle                 [PASS] (Error: 0.0000e+00, Tol: 1.0000e-10)
+  - camera_pixel_angle_roundtrip        [PASS] (Error: 0.0000e+00, Tol: 1.0000e-10)
+  - camera_fov_x_equation               [PASS] (Error: 0.0000e+00, Tol: 1.0000e-06)
+  - psf_gaussian_peak                   [PASS] (Error: 0.0000e+00, Tol: 1.0000e-10)
+  - psf_gaussian_one_sigma              [PASS] (Error: 0.0000e+00, Tol: 1.0000e-10)
+  - background_uniform_baseline         [PASS] (Error: 0.0000e+00, Tol: 1.0000e-10)
+  - background_gradient_corner          [PASS] (Error: 0.0000e+00, Tol: 1.0000e-10)
+  - atmosphere_transmittance_beer_lambert [PASS] (Error: 0.0000e+00, Tol: 1.0000e-10)
+  - noise_sigma_equation                [PASS] (Error: 0.0000e+00, Tol: 1.0000e-10)
+  - noise_statistical_mean              [PASS] (Error: 4.6249e-04, Tol: 5.0000e-02)
+  - noise_statistical_std               [PASS] (Error: 2.2894e-03, Tol: 2.3717e-01)
+  - reproducibility_identical_seed      [PASS] (Error: 0.0000e+00, Tol: 0.0000e+00)
+  - ground_truth_subpixel_x             [PASS] (Error: 0.0000e+00, Tol: 1.0000e-10)
+  - ground_truth_theta_x_analytical     [PASS] (Error: 0.0000e+00, Tol: 1.0000e-10)

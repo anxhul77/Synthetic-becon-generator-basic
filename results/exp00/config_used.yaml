@@ -1,0 +1,43 @@
+amplitude: 150.0
+background_level: 10.0
+camera:
+  cx: 960.0
+  cy: 540.0
+  fov_x_deg: 51.282
+  fov_y_deg: 30.256
+  fps: 60.0
+  fx: 2000.0
+  fy: 2000.0
+  height: 1080
+  width: 1920
+experiment_id: exp00
+experiment_name: Ground-Truth Beacon Generator Validation
+num_positions: 10
+num_trials_per_position: 2
+positions:
+- - 960.0
+  - 540.0
+- - 100.0
+  - 100.0
+- - 1820.0
+  - 100.0
+- - 100.0
+  - 980.0
+- - 1820.0
+  - 980.0
+- - 923.37
+  - 511.82
+- - 100.13
+  - 100.72
+- - 250.47
+  - 400.21
+- - 500.91
+  - 321.37
+- - 1432.85
+  - 789.14
+psf_type: gaussian
+seed: 42
+sigma_x: 2.0
+sigma_y: 2.0
+snr_db: 60.0
+total_trials: 20
