@@ -1,0 +1,42 @@
+exp15_beacon_tracking:
+  title: "Moving Beacon Tracking Experiment"
+  num_frames: 100
+  fps: 30.0
+  focal_length_px: 2000.0
+  snr_levels_db: [5.0, 10.0, 15.0, 20.0, 30.0]
+  background_level: 10.0
+  psf_sigma: 2.0
+  roi_size: 31
+  beacon_amplitude: 150.0
+  bit_depth: 8
+  trials_per_condition: 20
+  seed: 15015
+  
+  motion_models:
+    - name: "constant_velocity"
+      vx_px_per_sec: 30.0
+      vy_px_per_sec: 15.0
+    - name: "accelerating"
+      vx0: 10.0
+      vy0: 5.0
+      ax: 20.0
+      ay: 10.0
+    - name: "sinusoidal"
+      amp_x: 100.0
+      amp_y: 60.0
+      freq_x: 0.5
+      freq_y: 0.8
+    - name: "random_maneuver"
+      max_accel: 50.0
+      decorrelation_time_sec: 1.0
+    - name: "occlusion_fade"
+      vx: 20.0
+      vy: 10.0
+      fade_start_frame: 35
+      fade_end_frame: 55
+
+  tracker:
+    gating_threshold_px: 15.0
+    search_expansion_factor: 2.0
+    process_noise_q: 1.0
+    measurement_noise_r: 0.2

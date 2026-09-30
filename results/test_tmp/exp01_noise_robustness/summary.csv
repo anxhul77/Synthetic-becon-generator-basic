@@ -1,0 +1,2 @@
+snr_db,sigma_n,total_trials,correct_detections,detection_probability,pd_ci_lower,pd_ci_upper,false_alarm_images,false_alarm_rate,pfa_ci_lower,pfa_ci_upper,total_false_candidates,mean_candidate_count,num_localizations,rmse_x,rmse_y,rmse_radial,rmse_radial_ci_lower,rmse_radial_ci_upper,bias_x,bias_y,mean_radial_error,mean_latency_ms,median_latency_ms,detector_fps
+0.0,150.0,2,0,0.0,0.0,0.6576197724933469,2,1.0,0.34238022750665303,1.0,9,4.5,0,,,,,,,,,14.5,14.5,68.96551724137932

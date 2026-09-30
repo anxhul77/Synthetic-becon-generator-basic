@@ -1,0 +1,20 @@
+experiment_id: exp17_prediction_horizon_characterization
+title: "Experiment 17 — Prediction Horizon Characterization"
+objective: "Determine how prediction error and mathematically predicted uncertainty behave as a function of prediction horizon h in {0.5, 1, 2, 3, 4, 5} seconds."
+
+simulation:
+  fps: 30.0
+  total_duration_sec: 15.0
+  camera:
+    width: 1920
+    height: 1080
+    fx: 2000.0
+    fy: 2000.0
+
+horizons_sec: [0.5, 1.0, 2.0, 3.0, 4.0, 5.0]
+motion_types: ["linear_cv", "maneuvering_circular", "random_walk_accel"]
+num_trials_per_condition: 30
+random_seed: 42
+process_noise_q: 0.5
+measurement_noise_r: 0.0121
+focal_length_px: 2000.0

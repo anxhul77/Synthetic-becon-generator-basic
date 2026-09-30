@@ -1,0 +1,43 @@
+exp14_camera_fov_angular_error:
+  id: "exp14_camera_fov_angular_error"
+  title: "Camera FOV and Angular Pointing Error Analysis"
+  objective: "Quantify physical angular pointing error e_theta (in microradians) as a function of camera focal length f_x, f_y, sensor FOV, off-axis radial field position, and SNR."
+  focal_lengths_px:
+    - 500.0
+    - 1000.0
+    - 2000.0
+    - 4000.0
+    - 8000.0
+  snr_levels_db:
+    - 5.0
+    - 10.0
+    - 15.0
+    - 20.0
+    - 30.0
+  radial_offsets_px:
+    - 0.0
+    - 200.0
+    - 400.0
+    - 600.0
+    - 800.0
+  background_level: 10.0
+  psf_sigma: 2.0
+  roi_size: 31
+  beacon_amplitude: 150.0
+  bit_depth: 8
+  trials_per_condition: 1000
+  trials_per_radial: 50
+  phase_grid_steps: 8
+  trials_per_phase: 10
+  seed: 14014
+  confidence_level: 0.95
+  bootstrap_iterations: 2000
+  camera:
+    width: 1920
+    height: 1080
+    cx: 960.0
+    cy: 540.0
+  localization_methods:
+    - "Intensity-Weighted Centroid"
+    - "Gaussian Fitting"
+    - "PSF Fitting"

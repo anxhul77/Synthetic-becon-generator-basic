@@ -1,0 +1,71 @@
+background_levels:
+- 0.0
+- 10.0
+- 50.0
+- 100.0
+- 200.0
+- 500.0
+beacon_amplitude: 150.0
+bit_depth: 8
+bootstrap_iterations: 1000
+cx: 960.0
+cy: 540.0
+fx: 2000.0
+fy: 2000.0
+gradient_scenarios:
+  horizontal:
+    a: 0.05
+    b: 0.0
+    b0: 10.0
+  twod:
+    a: 0.05
+    b: 0.05
+    b0: 10.0
+  vertical:
+    a: 0.0
+    b: 0.05
+    b0: 10.0
+image_height: 1080
+image_width: 1920
+name: "Experiment 7 \u2014 Comparison of Beacon Localization Algorithms"
+psf_conditions:
+  elliptical:
+    psf_type: elliptical
+    sigma_x: 2.0
+    sigma_y: 3.0
+  narrow:
+    psf_type: gaussian
+    sigma_x: 1.0
+    sigma_y: 1.0
+  nominal:
+    psf_type: gaussian
+    sigma_x: 2.0
+    sigma_y: 2.0
+  wide:
+    psf_type: gaussian
+    sigma_x: 3.0
+    sigma_y: 3.0
+roi_size: 31
+roi_sizes:
+- 11
+- 15
+- 21
+- 31
+- 41
+seed: 42
+snr_levels:
+- 30.0
+- 25.0
+- 20.0
+- 15.0
+- 10.0
+- 7.0
+- 5.0
+- 3.0
+- 0.0
+subpixel_offsets:
+- 0.0
+- 0.25
+- 0.5
+- 0.75
+trials_per_snr: 1000

@@ -23,6 +23,5 @@ class GradientBackground(BackgroundModel):
     def render(self, width: int, height: int) -> np.ndarray:
         x = np.arange(width, dtype=np.float64)
         y = np.arange(height, dtype=np.float64)
-        xx, yy = np.meshgrid(x, y)
-        radiance = self.baseline + self.a * xx + self.b * yy
+        radiance = self.baseline + (self.a * x)[None, :] + (self.b * y)[:, None]
         return np.maximum(0.0, radiance)

@@ -1,0 +1,47 @@
+background_levels:
+- 0.0
+- 10.0
+- 50.0
+- 100.0
+- 200.0
+- 500.0
+beacon_amplitude: 150.0
+bit_depth: 8
+name: "Experiment 8 \u2014 Subpixel Position Localization Accuracy"
+phase_grid_steps:
+- 0.0
+- 0.125
+- 0.25
+- 0.375
+- 0.5
+- 0.625
+- 0.75
+- 0.875
+psf_sigmas:
+- 0.5
+- 1.0
+- 1.5
+- 2.0
+- 2.5
+- 3.0
+- 4.0
+roi_size: 31
+roi_sizes:
+- 11
+- 15
+- 21
+- 31
+- 41
+seed: 42
+snr_levels:
+- 30.0
+- 25.0
+- 20.0
+- 15.0
+- 10.0
+- 7.0
+- 5.0
+- 3.0
+- 0.0
+trials_per_phase: 20
+trials_per_snr: 1000

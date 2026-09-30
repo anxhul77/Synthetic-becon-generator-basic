@@ -1,0 +1,36 @@
+experiment_id: "exp20_prediction_error_adaptation"
+title: "Prediction-Error Adaptive Search Strategy"
+objective: "Scientifically demonstrate that real-time observable innovation residual feedback (NIS_k) dynamically scales search amplitudes to recover target lock under maneuvering trajectories and model mismatch."
+
+simulation:
+  fps: 30.0
+  total_duration_sec: 15.0
+  search_duration_sec: 5.0
+  camera:
+    width: 1920
+    height: 1080
+    fx: 2000.0
+    fy: 2000.0
+
+adaptation:
+  gamma_coverage: 2.4477467707840478 # sqrt(chi2_{2, 0.95})
+  lambda_adapt: 12.5 # Calibrated innovation gain factor
+  max_amplitude_px: 350.0
+  nis_window_size: 5
+  acq_radius_px: 15.0
+  consec_frames_acq: 3
+
+motion_models:
+  - name: "constant_velocity"
+    vx_px_per_sec: 40.0
+    vy_px_per_sec: 20.0
+  - name: "sinusoidal"
+    amp_x: 150.0
+    amp_y: 100.0
+    freq_x: 0.2
+    freq_y: 0.2
+  - name: "random_maneuver"
+    max_accel: 30.0
+
+num_trials_per_condition: 30
+random_seed: 42

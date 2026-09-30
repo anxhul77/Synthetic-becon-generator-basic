@@ -1,0 +1,49 @@
+amplitude: 150.0
+attenuation_alpha: 0.0
+beacon_x: 960.0
+beacon_y: 540.0
+bit_depth: 8
+detector_threshold: 160.0
+experiment_id: exp03_background_suppression
+experiment_name: "Experiment 3 \u2014 Background Suppression"
+filter_params:
+  gaussian_sub:
+    sigma: 15.0
+  none: {}
+  tophat:
+    radius: 7
+gradient_scenarios:
+  horizontal:
+    b0: 100.0
+    delta_x: 100.0
+    delta_y: 0.0
+  twod:
+    b0: 100.0
+    delta_x: 100.0
+    delta_y: 100.0
+  vertical:
+    b0: 100.0
+    delta_x: 0.0
+    delta_y: 100.0
+image_height: 1080
+image_width: 1920
+localization_tolerance_px: 5.0
+methods:
+- none
+- gaussian_sub
+- tophat
+range_km: 0.0
+seed: 42
+sigma_x: 2.0
+sigma_y: 2.0
+snr_db: 15.0
+total_evaluations: 27000
+total_unique_images: 9000
+trials_per_condition: 1000
+uniform_levels:
+- 0.0
+- 50.0
+- 100.0
+- 200.0
+- 500.0
+- 1000.0

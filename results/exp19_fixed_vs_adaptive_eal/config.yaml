@@ -1,0 +1,41 @@
+actuator_constraints:
+  max_accel_px_s2: 8000.0
+  max_velocity_px_s: 1500.0
+eal:
+  acq_radius_px: 15.0
+  base_freq_hz: 0.5
+  consec_frames_acq: 3
+  fixed_amplitude_px: 150.0
+  freq_ratio:
+  - 3
+  - 2
+  gamma_coverage: 2.4477467707840477
+  phase_shift_rad: 1.5707963267948966
+experiment_id: exp19_fixed_vs_adaptive_eal
+motion_models:
+- name: constant_velocity
+  vx_px_per_sec: 40.0
+  vy_px_per_sec: 20.0
+- amp_x: 150.0
+  amp_y: 100.0
+  freq_x: 0.2
+  freq_y: 0.2
+  name: sinusoidal
+- max_accel: 30.0
+  name: random_maneuver
+num_trials_per_condition: 30
+objective: Quantitatively evaluate whether shaping Expanding Amplitude Lissajous (EAL)
+  coarse search using predicted 5-second position covariance \Sigma_5 achieves higher
+  acquisition probability P_A, faster acquisition time T_A, and lower search path
+  length L_search compared to fixed EAL.
+random_seed: 42
+simulation:
+  camera:
+    fx: 2000.0
+    fy: 2000.0
+    height: 1080
+    width: 1920
+  fps: 30.0
+  search_duration_sec: 5.0
+  total_duration_sec: 15.0
+title: Fixed EAL vs Uncertainty-Adaptive EAL Search Strategy

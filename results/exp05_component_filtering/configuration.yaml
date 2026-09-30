@@ -1,0 +1,71 @@
+amplitude: 150.0
+attenuation_alpha: 0.0
+background_levels:
+- 0.0
+- 50.0
+- 100.0
+- 200.0
+- 500.0
+beacon_x: 960.0
+beacon_y: 540.0
+bit_depth: 8
+detector_threshold: 160.0
+experiment_id: exp05_component_filtering
+experiment_name: "Experiment 5 \u2014 Connected-Component Filtering"
+filter_params:
+  aspect_ratio:
+    max_aspect_ratio: 2.0
+  circularity:
+    min_circularity: 0.5
+  combined:
+    max_area: 50
+    max_aspect_ratio: 2.0
+    min_area: 3
+    min_circularity: 0.5
+    min_peak_intensity: 180.0
+  max_area:
+    max_area: 50
+  min_area:
+    min_area: 3
+  none: {}
+  peak_intensity:
+    min_peak_intensity: 180.0
+fixed_bg_for_snr: 100.0
+fixed_snr_for_bg: 15.0
+gradient_scenarios:
+  horizontal:
+    b0: 100.0
+    delta_x: 100.0
+    delta_y: 0.0
+  twod:
+    b0: 100.0
+    delta_x: 100.0
+    delta_y: 100.0
+  vertical:
+    b0: 100.0
+    delta_x: 0.0
+    delta_y: 100.0
+image_height: 1080
+image_width: 1920
+localization_tolerance_px: 5.0
+methods:
+- none
+- min_area
+- max_area
+- aspect_ratio
+- circularity
+- peak_intensity
+- combined
+range_km: 0.0
+seed: 42
+sigma_x: 2.0
+sigma_y: 2.0
+snr_levels:
+- 30.0
+- 20.0
+- 15.0
+- 10.0
+- 5.0
+total_evaluations: 196000
+total_unique_images: 28000
+trials_per_condition: 1000

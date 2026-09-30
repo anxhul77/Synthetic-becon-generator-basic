@@ -1,0 +1,40 @@
+background_levels:
+- 10.0
+- 50.0
+- 100.0
+- 200.0
+background_types:
+- uniform
+- horizontal
+- vertical
+- two_dimensional
+beacon_amplitude: 150.0
+bit_depth: 8
+bootstrap_iterations: 2000
+confidence_level: 0.95
+gradient_change: 100.0
+name: "Experiment 11 \u2014 Background and PSF Interaction"
+phase_grid_steps:
+- 0.0
+- 0.125
+- 0.25
+- 0.375
+- 0.5
+- 0.625
+- 0.75
+- 0.875
+psf_sigma_values:
+- 1.0
+- 2.0
+- 3.0
+- 4.0
+roi_size: 31
+seed: 11011
+snr_levels_db:
+- 5.0
+- 10.0
+- 15.0
+- 20.0
+trials_per_condition: 1000
+trials_per_phase: 10
+trials_per_sensitivity: 50

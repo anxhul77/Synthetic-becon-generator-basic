@@ -1,0 +1,20 @@
+exp16_motion_framerate:
+  title: "Motion and Frame-Rate Operational Boundary Experiment"
+  sequence_duration_sec: 3.0
+  focal_length_px: 2000.0
+  snr_db: 15.0
+  background_level: 10.0
+  psf_sigma: 2.0
+  roi_size: 31
+  beacon_amplitude: 150.0
+  bit_depth: 8
+  trials_per_condition: 10
+  seed: 16016
+
+  angular_velocities_deg_per_sec: [0.1, 1.0, 5.0, 10.0, 20.0]
+  camera_fps_levels: [15, 30, 60, 120]
+
+  tracker:
+    gating_threshold_px: 15.0
+    process_noise_q: 1.0
+    measurement_noise_r: 0.2

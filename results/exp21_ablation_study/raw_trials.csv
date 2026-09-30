@@ -1,0 +1,361 @@
+trial_idx,motion_type,strategy,method_id,acquired,acq_frame,acq_time_sec,search_path_len_px,angular_error_urad
+0,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+0,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,74109.4784270633
+0,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4858.432637779058
+0,constant_velocity,Method D — Full Adaptive EAL,Method D,True,134,4.466666666666667,265.0150259672363,3877.3916077375347
+1,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+1,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395806,74116.88092320762
+1,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4874.168975186897
+1,constant_velocity,Method D — Full Adaptive EAL,Method D,True,133,4.433333333333334,283.5682042486318,4229.219309983529
+2,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+2,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395806,74114.02916693558
+2,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4875.221606549565
+2,constant_velocity,Method D — Full Adaptive EAL,Method D,True,133,4.433333333333334,295.3503537319792,4041.1758399205396
+3,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+3,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,74103.02404047892
+3,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4864.552745347628
+3,constant_velocity,Method D — Full Adaptive EAL,Method D,True,133,4.433333333333334,299.19432818752625,3978.121200918488
+4,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+4,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395806,74147.1121204483
+4,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4881.8377123299315
+4,constant_velocity,Method D — Full Adaptive EAL,Method D,True,133,4.433333333333334,281.45240935700895,4267.362797188451
+5,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+5,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,74120.92466990835
+5,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4858.2974818196735
+5,constant_velocity,Method D — Full Adaptive EAL,Method D,True,133,4.433333333333334,283.1765176775988,4219.589227971114
+6,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+6,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,74140.00590896381
+6,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4843.772367065406
+6,constant_velocity,Method D — Full Adaptive EAL,Method D,True,133,4.433333333333334,309.30794465977954,3811.581223067636
+7,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+7,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395806,74127.24377175716
+7,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4893.883103757407
+7,constant_velocity,Method D — Full Adaptive EAL,Method D,True,133,4.433333333333334,284.61937352095754,4228.284821627945
+8,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+8,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,74129.3957347435
+8,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4885.685227788696
+8,constant_velocity,Method D — Full Adaptive EAL,Method D,True,133,4.433333333333334,280.25302961507714,4295.80514823519
+9,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+9,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,74114.69248864352
+9,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4894.594712560535
+9,constant_velocity,Method D — Full Adaptive EAL,Method D,True,133,4.433333333333334,278.51846729685593,4338.228558411369
+10,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+10,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,74094.51812077388
+10,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4903.464362259378
+10,constant_velocity,Method D — Full Adaptive EAL,Method D,True,133,4.433333333333334,273.9462527371901,4433.672610712278
+11,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+11,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,74124.32974718632
+11,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4865.885815251671
+11,constant_velocity,Method D — Full Adaptive EAL,Method D,True,133,4.433333333333334,275.1131331212637,4370.340391113134
+12,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+12,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,74188.42913757577
+12,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4868.19317272929
+12,constant_velocity,Method D — Full Adaptive EAL,Method D,True,134,4.466666666666667,264.19362980996624,3873.75750888224
+13,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+13,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,74176.65016894757
+13,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4895.583974290136
+13,constant_velocity,Method D — Full Adaptive EAL,Method D,True,133,4.433333333333334,280.9029667874769,4284.8884194685315
+14,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+14,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395806,74132.70622987949
+14,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4860.025977992545
+14,constant_velocity,Method D — Full Adaptive EAL,Method D,True,133,4.433333333333334,278.73642086155155,4297.080535984916
+15,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+15,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,74097.2629949736
+15,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4825.5766460303685
+15,constant_velocity,Method D — Full Adaptive EAL,Method D,True,134,4.466666666666667,259.97447628489033,3924.228384628734
+16,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+16,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,74103.93224132175
+16,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4828.960719343079
+16,constant_velocity,Method D — Full Adaptive EAL,Method D,True,133,4.433333333333334,289.8299404027247,4084.8542847890662
+17,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+17,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395806,74098.52276862135
+17,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4866.073766257723
+17,constant_velocity,Method D — Full Adaptive EAL,Method D,True,134,4.466666666666667,253.50713316950856,4066.1427077189496
+18,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+18,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,74123.20280692617
+18,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4898.317851242692
+18,constant_velocity,Method D — Full Adaptive EAL,Method D,True,134,4.466666666666667,265.36561149693773,3905.7089907817126
+19,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+19,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,74053.95814212922
+19,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4855.6005566707945
+19,constant_velocity,Method D — Full Adaptive EAL,Method D,True,133,4.433333333333334,273.0755247406754,4408.673482791222
+20,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+20,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,74128.61689461413
+20,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4870.794286313241
+20,constant_velocity,Method D — Full Adaptive EAL,Method D,True,133,4.433333333333334,278.27289729657286,4316.75168641938
+21,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+21,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,74135.63583339922
+21,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4926.736485145788
+21,constant_velocity,Method D — Full Adaptive EAL,Method D,True,134,4.466666666666667,266.1562193930122,3917.253655416346
+22,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+22,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,74108.90228362085
+22,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4820.451349643647
+22,constant_velocity,Method D — Full Adaptive EAL,Method D,True,133,4.433333333333334,268.61834197938356,4450.268903155533
+23,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+23,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395806,74146.2916843064
+23,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4877.3952845616805
+23,constant_velocity,Method D — Full Adaptive EAL,Method D,True,133,4.433333333333334,286.19958433757245,4181.181526165037
+24,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+24,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,74179.13425587432
+24,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4838.176737363985
+24,constant_velocity,Method D — Full Adaptive EAL,Method D,True,133,4.433333333333334,312.53992111856394,3751.9076738918216
+25,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+25,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,74090.93985723016
+25,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4921.071617903102
+25,constant_velocity,Method D — Full Adaptive EAL,Method D,True,134,4.466666666666667,257.4572700832144,4056.7720556631175
+26,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+26,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,74141.02926612062
+26,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4881.74722932335
+26,constant_velocity,Method D — Full Adaptive EAL,Method D,True,133,4.433333333333334,271.42555877376384,4452.8616389858125
+27,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+27,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,74139.15186636729
+27,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4870.301501085025
+27,constant_velocity,Method D — Full Adaptive EAL,Method D,True,134,4.466666666666667,252.8324969854597,4072.100254791131
+28,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+28,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,74118.53655252857
+28,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4824.728862887065
+28,constant_velocity,Method D — Full Adaptive EAL,Method D,True,133,4.433333333333334,308.5647725104134,3811.3587918287444
+29,constant_velocity,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,138543.6566699071
+29,constant_velocity,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,74089.14628953509
+29,constant_velocity,Method C — Uncertainty-Adaptive EAL,Method C,True,134,4.466666666666667,213.64389759738532,4826.095722029517
+29,constant_velocity,Method D — Full Adaptive EAL,Method D,True,134,4.466666666666667,250.81313791060228,4074.963467848157
+0,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+0,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,0.0,454540.3456239388
+0,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,0.0,454540.3456239388
+0,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,0.0,454540.3456239388
+1,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+1,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,0.0,454540.3456239388
+1,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,0.0,454540.3456239388
+1,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,0.0,454540.3456239388
+2,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+2,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,0.0,454540.3456239388
+2,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,0.0,454540.3456239388
+2,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,0.0,454540.3456239388
+3,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+3,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,243643.82469342064
+3,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64394489856585,195466.2617106174
+3,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,2247.094807126653,238083.07586034917
+4,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+4,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,208410.32271865357
+4,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64390076194528,163876.7567612869
+4,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,1275.7080420814314,187422.61055949482
+5,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+5,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,0.0,454540.3456239388
+5,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,0.0,454540.3456239388
+5,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,0.0,454540.3456239388
+6,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+6,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,0.0,454540.3456239388
+6,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,0.0,454540.3456239388
+6,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,0.0,454540.3456239388
+7,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+7,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958076,263377.9120428565
+7,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64390076194536,190903.7997501093
+7,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,377.32623477093614,190047.26928001305
+8,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+8,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,0.0,454540.3456239388
+8,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,0.0,454540.3456239388
+8,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,0.0,454540.3456239388
+9,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+9,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,1580.9251380506114,411629.74480752414
+9,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,168.14951797872735,433844.4297542964
+9,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,1268.1224036045164,433844.42975429626
+10,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+10,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,243127.44236917287
+10,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64390076194525,184851.13346615987
+10,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,1773.4306935267277,212649.44021118584
+11,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+11,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,25.299363108889338,454540.3456239388
+11,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,0.0,454540.3456239388
+11,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,0.0,454540.3456239388
+12,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+12,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,301136.10990850435
+12,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.6441964063797,274575.1385923571
+12,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,447.39535171093337,279892.44751647883
+13,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+13,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,3.8538432865798313,454540.3456239388
+13,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,0.0,454540.3456239388
+13,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,0.0,454540.3456239388
+14,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+14,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,180445.7299054554
+14,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64390076194508,165429.948099269
+14,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,1363.339655602391,194115.61203628356
+15,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+15,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,171435.46687084786
+15,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64391786722464,110557.10260020303
+15,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,919.8637552604334,123390.84773484655
+16,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+16,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,0.0,454540.3456239388
+16,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,0.0,454540.3456239388
+16,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,0.0,454540.3456239388
+17,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+17,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,338541.08938261005
+17,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64415645204755,318626.3838922617
+17,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,1664.583821315381,350953.9803150955
+18,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+18,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,224748.0061986494
+18,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64396600174462,185253.1615086986
+18,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,374.35960142589033,188870.66998730332
+19,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+19,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,0.0,454540.3456239388
+19,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,0.0,454540.3456239388
+19,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,0.0,454540.3456239388
+20,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+20,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,217991.40564964354
+20,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.6439508522257,176110.9326712406
+20,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,1949.3757067496822,215231.54874610034
+21,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+21,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,266355.4234183973
+21,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.6438984973749,234963.6390921504
+21,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,1308.5108306080992,260007.46279471103
+22,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+22,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,4.046393620499657,454540.3456239388
+22,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,0.0,454540.3456239388
+22,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,0.0,454540.3456239388
+23,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+23,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,0.0,454540.3456239388
+23,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,0.0,454540.3456239388
+23,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,0.0,454540.3456239388
+24,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+24,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,224453.25353403485
+24,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64391786722464,184690.16481405857
+24,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,378.63501067209467,188397.56842214955
+25,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+25,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,0.0,454540.3456239388
+25,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,0.0,454540.3456239388
+25,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,0.0,454540.3456239388
+26,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+26,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,152395.7203703083
+26,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64391786722456,150647.2608009352
+26,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,1366.5252555579937,179361.3018813078
+27,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+27,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,0.0,454540.3456239388
+27,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,0.0,454540.3456239388
+27,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,0.0,454540.3456239388
+28,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+28,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2835.4479162830676,353663.6301855334
+28,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.6449430775174,355028.3642589801
+28,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,429.51426939393485,359823.38147667603
+29,sinusoidal,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,132907.17235609292
+29,sinusoidal,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,143616.56115347633
+29,sinusoidal,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64391786722456,163197.3875684018
+29,sinusoidal,Method D — Full Adaptive EAL,Method D,False,-1,5.0,1584.2064632963065,195121.3495363401
+0,random_maneuver,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,83657.02291264321
+0,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,53710.706118769835
+0,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64389759738532,40874.37877677982
+0,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,2502.7502658923067,93708.71332249607
+1,random_maneuver,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,64437.922914051276
+1,random_maneuver,Method B — Predictive Fixed EAL,Method B,True,36,1.2,2851.1724503958067,5984.388335271172
+1,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64389759738532,13134.613028214895
+1,random_maneuver,Method D — Full Adaptive EAL,Method D,True,47,1.5666666666666667,1683.6823838686591,7402.226349818952
+2,random_maneuver,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,134868.63197069906
+2,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,117356.57000014515
+2,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,True,60,2.0,213.64389759738532,6936.382624496244
+2,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,3995.052251700131,31564.298436380417
+3,random_maneuver,Method A — Fixed EAL,Method A,True,25,0.8333333333333334,2851.1724503958067,5350.6291406554255
+3,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,101620.63968572397
+3,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64389759738532,82482.16768972573
+3,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,1119.056749730306,106079.0254661705
+4,random_maneuver,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,161949.40546671438
+4,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,38859.38654391179
+4,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64389759738532,50617.770238758196
+4,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,6652.735717590217,148818.5590322981
+5,random_maneuver,Method A — Fixed EAL,Method A,True,29,0.9666666666666667,2851.1724503958067,5237.857527906903
+5,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,75215.5723842724
+5,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,True,51,1.7,213.6438975973848,5668.614727839541
+5,random_maneuver,Method D — Full Adaptive EAL,Method D,True,39,1.3,2321.494790223532,5665.890283746641
+6,random_maneuver,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,157100.37927804104
+6,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,178353.20785806526
+6,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.6438975973848,103479.82632053358
+6,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,6652.735717590216,188357.17663141663
+7,random_maneuver,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,136779.21784154588
+7,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,49300.21912574237
+7,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64389759738532,124037.57608637724
+7,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,5526.372379353872,185176.46901629525
+8,random_maneuver,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,185332.11996731904
+8,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,144236.94153495476
+8,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64389759738532,71455.30352003427
+8,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,2581.839626769689,105879.24894694852
+9,random_maneuver,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,118225.57571743833
+9,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,96908.8168163608
+9,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64389759738532,40099.85949831084
+9,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,1342.083713875053,15337.828145933841
+10,random_maneuver,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,113026.10496556747
+10,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,129631.47428328246
+10,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64389759738532,59223.161412568355
+10,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,2213.853449197859,55420.543326510226
+11,random_maneuver,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,148340.34049585307
+11,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,81478.02990592382
+11,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,True,74,2.466666666666667,213.64389759738532,6251.7547475055135
+11,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,1372.7514201363656,27350.925706619633
+12,random_maneuver,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,115914.72891692593
+12,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,36128.25147577244
+12,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64389759738532,86659.2729071491
+12,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,6652.735717590217,217801.6172875439
+13,random_maneuver,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,70093.59521480992
+13,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,49764.336164568536
+13,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64389759738532,26313.711215060055
+13,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,1991.2747155335876,60594.959382170615
+14,random_maneuver,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,52532.737372352145
+14,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,95741.64294751827
+14,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64389759738532,25634.9764055207
+14,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,3312.7607386782142,97862.23448443296
+15,random_maneuver,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,251441.50392564357
+15,random_maneuver,Method B — Predictive Fixed EAL,Method B,True,36,1.2,2851.1724503958067,3124.3762628601353
+15,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64389759738492,153854.13345214984
+15,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,4773.173983249669,214242.56714387442
+16,random_maneuver,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,75234.36234191264
+16,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,57376.17305235908
+16,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.6438975973848,37953.572230256206
+16,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,3873.5649962577136,73441.4450885801
+17,random_maneuver,Method A — Fixed EAL,Method A,True,23,0.7666666666666667,2851.1724503958067,6232.687972567484
+17,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,78398.63766304214
+17,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64389759738532,30650.51527695927
+17,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,6276.277107188675,126773.94307994284
+18,random_maneuver,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,33254.08145607225
+18,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958076,95814.61843122174
+18,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.6438975973848,21415.77153801494
+18,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,1243.985190833443,32484.982857356496
+19,random_maneuver,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,215781.69156576096
+19,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,209872.249076096
+19,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64389759738532,135137.6783302298
+19,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,3507.384735974915,147091.95620805846
+20,random_maneuver,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,151282.44077068454
+20,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,99895.0707127181
+20,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64389759738532,56154.40028793866
+20,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,4799.057956299211,61843.823838548116
+21,random_maneuver,Method A — Fixed EAL,Method A,True,4,0.13333333333333333,2851.1724503958067,5727.531291620593
+21,random_maneuver,Method B — Predictive Fixed EAL,Method B,True,38,1.2666666666666666,2851.1724503958067,6822.287763728711
+21,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.6438975973848,27123.729777639524
+21,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,6563.59068129712,185557.05367242993
+22,random_maneuver,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,66384.65476278756
+22,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,54380.93010289415
+22,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.6438975973848,51913.645617119735
+22,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,997.4144134039223,69297.42552076152
+23,random_maneuver,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,104065.35702369487
+23,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,52340.08926752703
+23,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,True,108,3.6,213.64389759738532,3080.8799910827906
+23,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,3970.9279969065383,86917.97829465581
+24,random_maneuver,Method A — Fixed EAL,Method A,True,28,0.9333333333333333,2851.1724503958067,6181.991104121214
+24,random_maneuver,Method B — Predictive Fixed EAL,Method B,True,12,0.4,2851.1724503958067,1431.7640216836014
+24,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,True,14,0.4666666666666667,213.6438975973848,5734.333800650779
+24,random_maneuver,Method D — Full Adaptive EAL,Method D,True,12,0.4,1945.9554261250792,3879.184958343177
+25,random_maneuver,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,158072.48078848454
+25,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,122302.88244199294
+25,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64389759738538,47531.8562614451
+25,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,5204.336127198065,140105.71893257127
+26,random_maneuver,Method A — Fixed EAL,Method A,True,31,1.0333333333333334,2851.1724503958067,6235.596073885869
+26,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,128426.49740793453
+26,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.6438975973848,55298.14371868655
+26,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,4415.866960053306,103920.10745492253
+27,random_maneuver,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,141472.25117175977
+27,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.172450395807,98286.45106415296
+27,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64389759738532,24347.767829109285
+27,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,2131.9510735529584,45827.44359162048
+28,random_maneuver,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,152722.604031332
+28,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,122833.90887460207
+28,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.64389759738532,61339.04537306991
+28,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,3991.3263965056294,58897.462983948455
+29,random_maneuver,Method A — Fixed EAL,Method A,False,-1,5.0,2851.1724503958067,149680.48492978932
+29,random_maneuver,Method B — Predictive Fixed EAL,Method B,False,-1,5.0,2851.1724503958067,187445.38903404152
+29,random_maneuver,Method C — Uncertainty-Adaptive EAL,Method C,False,-1,5.0,213.6438975973848,114622.53924137994
+29,random_maneuver,Method D — Full Adaptive EAL,Method D,False,-1,5.0,1161.9222254153892,108483.14029040886

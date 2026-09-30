@@ -1,0 +1,28 @@
+amplitude: 150.0
+attenuation_alpha: 0.0
+background_level: 100.0
+beacon_x: 960.0
+beacon_y: 540.0
+bit_depth: 8
+detector_threshold: 160.0
+experiment_id: exp01_noise_robustness
+experiment_name: "Experiment 1 \u2014 Noise Robustness"
+image_height: 1080
+image_width: 1920
+localization_tolerance_px: 5.0
+range_km: 0.0
+seed: 42
+sigma_x: 2.0
+sigma_y: 2.0
+snr_levels:
+- 30.0
+- 25.0
+- 20.0
+- 15.0
+- 10.0
+- 7.0
+- 5.0
+- 3.0
+- 0.0
+total_trials: 9000
+trials_per_snr: 1000

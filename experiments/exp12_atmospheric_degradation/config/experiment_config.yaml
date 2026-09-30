@@ -1,0 +1,59 @@
+exp12_atmospheric_degradation:
+  title: "Atmospheric Degradation Experiment"
+  camera:
+    width: 1920
+    height: 1080
+    fx: 2000.0
+    fy: 2000.0
+    cx: 960.0
+    cy: 540.0
+  beacon:
+    amplitude: 150.0
+    sigma_x: 2.0
+    sigma_y: 2.0
+    bit_depth: 8
+  background:
+    level: 10.0
+    type: "uniform"
+  noise:
+    snr_db: 30.0
+
+  stage_12a_distance:
+    distances_km: [0.0, 1.0, 2.0, 5.0, 10.0, 15.0, 20.0]
+    attenuation_alpha: 0.0001
+    trials_per_condition: 100
+
+  stage_12b_attenuation:
+    attenuation_alphas: [0.0, 0.00005, 0.0001, 0.0002, 0.0005, 0.001]
+    distances_km: [1.0, 5.0, 10.0]
+    trials_per_condition: 50
+
+  stage_12c_turbulence:
+    strengths: [0.0, 0.1, 0.25, 0.5]
+    distance_km: 5.0
+    attenuation_alpha: 0.0001
+    trials_per_condition: 50
+
+  stage_12d_scattering:
+    fractions: [0.0, 0.05, 0.1, 0.2, 0.4]
+    halo_sigmas: [5.0, 10.0, 20.0]
+    distance_km: 5.0
+    attenuation_alpha: 0.0001
+    trials_per_condition: 50
+
+  stage_12e_combined:
+    distances_km: [1.0, 5.0, 10.0]
+    attenuation_alpha: 0.0001
+    turbulence_strengths: [0.0, 0.1, 0.25]
+    scattering_fractions: [0.0, 0.1, 0.2]
+    trials_per_condition: 20
+
+  detector:
+    threshold_sigma_multiplier: 3.5
+    min_area_px: 3
+    max_area_px: 500
+    matching_tolerance_px: 5.0
+
+  seed: 12012
+  confidence_level: 0.95
+  bootstrap_iterations: 1000

@@ -1,0 +1,44 @@
+eal:
+  acq_radius_px: 15.0
+  consec_frames_acq: 3
+  fixed_amplitude_px: 150.0
+  gamma_coverage: 2.4477467707840477
+  lambda_adapt: 12.5
+  max_amplitude_px: 350.0
+experiment_id: exp22_monte_carlo_validation
+monte_carlo:
+  in_distribution_ratio: 0.7
+  num_trials: 100
+  random_seed: 42
+objective: Scientifically validate algorithmic performance across randomized operational
+  parameter distributions (SNR, PSF width, background, velocity, acceleration), evaluating
+  in-distribution vs stress-testing regimes with statistical hypothesis testing and
+  effect size reporting.
+parameter_distributions:
+  background_level:
+    max: 50.0
+    min: 5.0
+  psf_sigma:
+    max: 3.5
+    min: 1.0
+  snr_db:
+    max: 30.0
+    mean: 15.0
+    min: 5.0
+    std: 5.0
+  target_accel_px_s2:
+    max: 40.0
+    min: 0.0
+  target_velocity_px_s:
+    max: 80.0
+    min: 10.0
+simulation:
+  camera:
+    fx: 2000.0
+    fy: 2000.0
+    height: 1080
+    width: 1920
+  fps: 30.0
+  search_duration_sec: 5.0
+  total_duration_sec: 15.0
+title: Monte Carlo Statistical Validation of Adaptive FSOC Search

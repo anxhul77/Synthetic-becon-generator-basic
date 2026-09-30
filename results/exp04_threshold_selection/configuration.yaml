@@ -1,0 +1,60 @@
+adaptive_block_size: 31
+adaptive_c: 5.0
+amplitude: 150.0
+attenuation_alpha: 0.0
+background_levels:
+- 0.0
+- 50.0
+- 100.0
+- 200.0
+- 500.0
+beacon_x: 960.0
+beacon_y: 540.0
+bit_depth: 8
+experiment_id: exp04_threshold_selection
+experiment_name: "Experiment 4 \u2014 Threshold Selection"
+global_threshold: 160.0
+gradient_scenarios:
+  horizontal:
+    b0: 100.0
+    delta_x: 100.0
+    delta_y: 0.0
+  twod:
+    b0: 100.0
+    delta_x: 100.0
+    delta_y: 100.0
+  vertical:
+    b0: 100.0
+    delta_x: 0.0
+    delta_y: 100.0
+image_height: 1080
+image_width: 1920
+k_values:
+- 2.0
+- 3.0
+- 4.0
+- 5.0
+- 6.0
+localization_tolerance_px: 5.0
+methods:
+- global
+- otsu
+- adaptive
+- mu_plus_2sigma
+- mu_plus_3sigma
+- mu_plus_4sigma
+- mu_plus_5sigma
+- mu_plus_6sigma
+range_km: 0.0
+seed: 42
+sigma_x: 2.0
+sigma_y: 2.0
+snr_levels:
+- 30.0
+- 20.0
+- 15.0
+- 10.0
+- 5.0
+total_evaluations: 224000
+total_unique_images: 28000
+trials_per_condition: 1000

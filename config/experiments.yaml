@@ -21,3 +21,320 @@ exp00:
     - [250.47, 400.21]  # subpixel 3
     - [500.91, 321.37]  # subpixel 4
     - [1432.85, 789.14] # subpixel 5
+
+exp01_noise_robustness:
+  name: "Experiment 1 — Noise Robustness"
+  snr_levels: [30.0, 25.0, 20.0, 15.0, 10.0, 7.0, 5.0, 3.0, 0.0]
+  trials_per_snr: 1000
+  image_width: 1920
+  image_height: 1080
+  amplitude: 150.0
+  sigma_x: 2.0
+  sigma_y: 2.0
+  background_level: 100.0
+  bit_depth: 8
+  beacon_x: 960.0
+  beacon_y: 540.0
+  attenuation_alpha: 0.0
+  range_km: 0.0
+  detector_threshold: 160.0
+  localization_tolerance_px: 5.0
+  seed: 42
+
+exp02_denoising_comparison:
+  name: "Experiment 2 — Denoising Comparison"
+  snr_levels: [20.0, 15.0, 10.0, 5.0]
+  trials_per_snr: 1000
+  methods: [none, gaussian, median, bilateral]
+  image_width: 1920
+  image_height: 1080
+  amplitude: 150.0
+  sigma_x: 2.0
+  sigma_y: 2.0
+  background_level: 100.0
+  bit_depth: 8
+  beacon_x: 960.0
+  beacon_y: 540.0
+  attenuation_alpha: 0.0
+  range_km: 0.0
+  detector_threshold: 160.0
+  localization_tolerance_px: 5.0
+  seed: 100
+  filter_params:
+    none: {}
+    gaussian:
+      ksize: 5
+      sigma: 1.0
+    median:
+      ksize: 3
+    bilateral:
+      d: 5
+      sigma_color: 30.0
+      sigma_space: 2.0
+
+exp03_background_suppression:
+  name: "Experiment 3 — Background Suppression"
+  snr_db: 15.0
+  trials_per_condition: 1000
+  methods: [none, gaussian_sub, tophat]
+  uniform_levels: [0.0, 50.0, 100.0, 200.0, 500.0, 1000.0]
+  gradient_scenarios:
+    horizontal:
+      b0: 100.0
+      delta_x: 100.0
+      delta_y: 0.0
+    vertical:
+      b0: 100.0
+      delta_x: 0.0
+      delta_y: 100.0
+    twod:
+      b0: 100.0
+      delta_x: 100.0
+      delta_y: 100.0
+  image_width: 1920
+  image_height: 1080
+  amplitude: 150.0
+  sigma_x: 2.0
+  sigma_y: 2.0
+  bit_depth: 8
+  beacon_x: 960.0
+  beacon_y: 540.0
+  attenuation_alpha: 0.0
+  range_km: 0.0
+  detector_threshold: 160.0
+  localization_tolerance_px: 5.0
+  seed: 42
+  filter_params:
+    none: {}
+    gaussian_sub:
+      sigma: 15.0
+    tophat:
+      radius: 7
+
+exp04_threshold_selection:
+  name: "Experiment 4 — Threshold Selection"
+  snr_levels: [30.0, 20.0, 15.0, 10.0, 5.0]
+  background_levels: [0.0, 50.0, 100.0, 200.0, 500.0]
+  uniform_snr_fixed_bg: 100.0
+  fixed_snr_for_bg: 15.0
+  trials_per_condition: 1000
+  methods: ["global", "otsu", "adaptive", "mu_plus_2sigma", "mu_plus_3sigma", "mu_plus_4sigma", "mu_plus_5sigma", "mu_plus_6sigma"]
+  global_threshold: 160.0
+  adaptive_block_size: 31
+  adaptive_c: 5.0
+  k_values: [2.0, 3.0, 4.0, 5.0, 6.0]
+  gradient_scenarios:
+    horizontal:
+      b0: 100.0
+      delta_x: 100.0
+      delta_y: 0.0
+    vertical:
+      b0: 100.0
+      delta_x: 0.0
+      delta_y: 100.0
+    twod:
+      b0: 100.0
+      delta_x: 100.0
+      delta_y: 100.0
+  image_width: 1920
+  image_height: 1080
+  amplitude: 150.0
+  sigma_x: 2.0
+  sigma_y: 2.0
+  bit_depth: 8
+  beacon_x: 960.0
+  beacon_y: 540.0
+  attenuation_alpha: 0.0
+  range_km: 0.0
+  localization_tolerance_px: 5.0
+  seed: 42
+
+exp05_component_filtering:
+  name: "Experiment 5 — Connected-Component Filtering"
+  snr_levels: [30.0, 20.0, 15.0, 10.0, 5.0]
+  background_levels: [0.0, 50.0, 100.0, 200.0, 500.0]
+  fixed_bg_for_snr: 100.0
+  fixed_snr_for_bg: 15.0
+  trials_per_condition: 1000
+  methods: ["none", "min_area", "max_area", "aspect_ratio", "circularity", "peak_intensity", "combined"]
+  detector_threshold: 160.0
+  localization_tolerance_px: 5.0
+  image_width: 1920
+  image_height: 1080
+  amplitude: 150.0
+  sigma_x: 2.0
+  sigma_y: 2.0
+  bit_depth: 8
+  beacon_x: 960.0
+  beacon_y: 540.0
+  attenuation_alpha: 0.0
+  range_km: 0.0
+  seed: 42
+  filter_params:
+    none: {}
+    min_area:
+      min_area: 3
+    max_area:
+      max_area: 50
+    aspect_ratio:
+      max_aspect_ratio: 2.0
+    circularity:
+      min_circularity: 0.5
+    peak_intensity:
+      min_peak_intensity: 180.0
+    combined:
+      min_area: 3
+      max_area: 50
+      max_aspect_ratio: 2.0
+      min_circularity: 0.5
+      min_peak_intensity: 180.0
+  gradient_scenarios:
+    horizontal:
+      b0: 100.0
+      delta_x: 100.0
+      delta_y: 0.0
+    vertical:
+      b0: 100.0
+      delta_x: 0.0
+      delta_y: 100.0
+    twod:
+      b0: 100.0
+      delta_x: 100.0
+      delta_y: 100.0
+
+exp06_classical_vs_ai:
+  name: "Experiment 6 — Classical vs AI vs Hybrid Beacon Detection"
+  num_train: 1400
+  num_val: 300
+  num_test: 300
+  snr_levels: [30.0, 20.0, 15.0, 10.0, 5.0, 0.0]
+  background_levels: [0.0, 50.0, 100.0, 200.0, 500.0]
+  distractor_counts: [0, 1, 3, 5]
+  psf_types: ["gaussian", "elliptical"]
+  epochs: 10
+  batch_size: 8
+  learning_rate: 0.001
+  confidence_threshold: 0.5
+  matching_radius_px: 5.0
+  seed: 42
+
+exp07_localization:
+  name: "Experiment 7 — Comparison of Beacon Localization Algorithms"
+  snr_levels: [30.0, 25.0, 20.0, 15.0, 10.0, 7.0, 5.0, 3.0, 0.0]
+  trials_per_snr: 1000
+  roi_size: 31
+  roi_sizes: [11, 15, 21, 31, 41]
+  background_levels: [0.0, 10.0, 50.0, 100.0, 200.0, 500.0]
+  gradient_scenarios:
+    horizontal:
+      b0: 10.0
+      a: 0.05
+      b: 0.0
+    vertical:
+      b0: 10.0
+      a: 0.0
+      b: 0.05
+    twod:
+      b0: 10.0
+      a: 0.05
+      b: 0.05
+  psf_conditions:
+    nominal: {sigma_x: 2.0, sigma_y: 2.0, psf_type: "gaussian"}
+    narrow: {sigma_x: 1.0, sigma_y: 1.0, psf_type: "gaussian"}
+    wide: {sigma_x: 3.0, sigma_y: 3.0, psf_type: "gaussian"}
+    elliptical: {sigma_x: 2.0, sigma_y: 3.0, psf_type: "elliptical"}
+  subpixel_offsets: [0.0, 0.25, 0.5, 0.75]
+  beacon_amplitude: 150.0
+  bit_depth: 8
+  seed: 42
+
+exp08_subpixel_localization:
+  name: "Experiment 8 — Subpixel Position Localization Accuracy"
+  snr_levels: [30.0, 25.0, 20.0, 15.0, 10.0, 7.0, 5.0, 3.0, 0.0]
+  trials_per_snr: 1000
+  phase_grid_steps: [0.0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875]
+  trials_per_phase: 20
+  psf_sigmas: [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 4.0]
+  background_levels: [0.0, 10.0, 50.0, 100.0, 200.0, 500.0]
+  roi_sizes: [11, 15, 21, 31, 41]
+  roi_size: 31
+  beacon_amplitude: 150.0
+  bit_depth: 8
+  seed: 42
+
+exp09_psf_width:
+  name: "Experiment 9 — PSF Width and Localization Accuracy"
+  psf_sigma_px: [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 4.0]
+  snr_levels_db: [30.0, 25.0, 20.0, 15.0, 10.0, 7.0, 5.0, 3.0, 0.0]
+  background_levels: [0.0, 10.0, 50.0, 100.0, 200.0, 500.0]
+  roi_sizes: [11, 15, 21, 31, 41]
+  roi_size: 31
+  beacon_amplitude: 150.0
+  bit_depth: 8
+  trials_per_condition: 1000
+  phase_grid_steps: [0.0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875]
+  trials_per_phase: 20
+  seed: 9009
+  confidence_level: 0.95
+  bootstrap_iterations: 2000
+
+exp10_psf_mismatch:
+  name: "Experiment 10 — PSF Mismatch and Localization Robustness"
+  psf_families: ["gaussian", "elliptical_gaussian", "asymmetric", "defocused", "aberrated"]
+  snr_levels_db: [30.0, 25.0, 20.0, 15.0, 10.0, 7.0, 5.0, 3.0, 0.0]
+  background_levels: [0.0, 10.0, 50.0, 100.0, 200.0, 500.0]
+  roi_sizes: [11, 15, 21, 31, 41]
+  roi_size: 31
+  beacon_amplitude: 150.0
+  bit_depth: 8
+  trials_per_condition: 1000
+  phase_grid_steps: [0.0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875]
+  trials_per_phase: 20
+  seed: 10010
+  confidence_level: 0.95
+  bootstrap_iterations: 2000
+
+exp11_background_psf_interaction:
+  name: "Experiment 11 — Background and PSF Interaction"
+  psf_sigma_values: [1.0, 2.0, 3.0, 4.0]
+  snr_levels_db: [5.0, 10.0, 15.0, 20.0]
+  background_levels: [10.0, 50.0, 100.0, 200.0]
+  background_types: ["uniform", "horizontal", "vertical", "two_dimensional"]
+  gradient_change: 100.0
+  roi_size: 31
+  beacon_amplitude: 150.0
+  bit_depth: 8
+  trials_per_condition: 1000
+  trials_per_sensitivity: 50
+  phase_grid_steps: [0.0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875]
+  trials_per_phase: 10
+  seed: 11011
+  confidence_level: 0.95
+  bootstrap_iterations: 2000
+
+exp14_camera_fov_angular_error:
+  name: "Experiment 14 — Camera FOV / Angular Error Analysis"
+  focal_lengths_px: [500.0, 1000.0, 2000.0, 4000.0, 8000.0]
+  snr_levels_db: [5.0, 10.0, 15.0, 20.0, 30.0]
+  radial_offsets_px: [0.0, 200.0, 400.0, 600.0, 800.0]
+  background_level: 10.0
+  psf_sigma: 2.0
+  roi_size: 31
+  beacon_amplitude: 150.0
+  bit_depth: 8
+  trials_per_condition: 1000
+  trials_per_radial: 50
+  phase_grid_steps: [0.0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875]
+  trials_per_phase: 10
+  seed: 14014
+  confidence_level: 0.95
+  bootstrap_iterations: 2000
+
+
+
+
+
+
+
+
+

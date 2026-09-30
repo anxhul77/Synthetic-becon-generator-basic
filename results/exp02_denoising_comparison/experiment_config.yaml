@@ -1,0 +1,40 @@
+amplitude: 150.0
+attenuation_alpha: 0.0
+background_level: 100.0
+beacon_x: 960.0
+beacon_y: 540.0
+bit_depth: 8
+detector_threshold: 160.0
+experiment_id: exp02_denoising_comparison
+experiment_name: "Experiment 2 \u2014 Denoising Comparison"
+filter_params:
+  bilateral:
+    d: 5
+    sigma_color: 30.0
+    sigma_space: 2.0
+  gaussian:
+    ksize: 5
+    sigma: 1.0
+  median:
+    ksize: 3
+  none: {}
+image_height: 1080
+image_width: 1920
+localization_tolerance_px: 5.0
+methods:
+- none
+- gaussian
+- median
+- bilateral
+range_km: 0.0
+seed: 100
+sigma_x: 2.0
+sigma_y: 2.0
+snr_levels:
+- 20.0
+- 15.0
+- 10.0
+- 5.0
+total_evaluations: 16000
+total_unique_noisy_images: 4000
+trials_per_snr: 1000

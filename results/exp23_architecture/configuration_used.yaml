@@ -1,0 +1,36 @@
+concurrency:
+  max_workers: 2
+  mechanism: ThreadPoolExecutor
+experiment_id: exp23_architecture
+model_checkpoint: results/exp06_classical_vs_ai/models/exp06_beacon_ai_model.pt
+objective: Empirically evaluate whether executing classical and AI beacon detection
+  pipelines in parallel reduces per-frame processing latency and improves throughput
+  compared with sequential execution.
+primary_benchmark:
+  background_level: 100.0
+  detector_threshold: 160.0
+  fps_target: 60.0
+  frame_budget_ms: 16.6667
+  matching_radius_px: 5.0
+  num_frames: 1000
+  num_repeats: 5
+  resolution:
+  - 1920
+  - 1080
+  seed: 42
+  snr_db: 20.0
+sensitivity_study:
+  resolutions:
+  - - 640
+    - 480
+  - - 1280
+    - 720
+  - - 1920
+    - 1080
+  snr_levels:
+  - 30.0
+  - 20.0
+  - 15.0
+  - 10.0
+  - 5.0
+title: "Experiment 23 \xE2\u20AC\u201D Sequential vs. Parallel Processing Architecture"

@@ -1,0 +1,46 @@
+chi2_thresholds:
+  0.5: 1.3862943611198906
+  0.9: 4.605170185988092
+  0.95: 5.991464547107979
+confidence_levels:
+- 0.5
+- 0.9
+- 0.95
+experiment_id: exp18_uncertainty_ellipse_coverage
+horizons_sec:
+- 0.5
+- 1.0
+- 2.0
+- 3.0
+- 4.0
+- 5.0
+measurement_noise:
+  r_var_px2: 0.0121
+motion_types:
+- linear_cv
+- maneuvering_circular
+- random_walk_accel
+num_trials_per_condition: 50
+objective: Scientifically characterize prediction covariance scaling and evaluate
+  empirical uncertainty ellipse coverage at nominal confidence levels (50%, 90%, 95%)
+  across horizons h in {0.5, 1, 2, 3, 4, 5} seconds.
+process_noise:
+  q_u_values:
+  - 0.1
+  - 0.5
+  - 1.0
+  - 2.0
+  q_v_values:
+  - 0.1
+  - 0.5
+  - 1.0
+  - 2.0
+random_seed: 42
+simulation:
+  camera:
+    focal_length_px: 2000.0
+    height: 1080
+    width: 1920
+  fps: 30.0
+  total_duration_sec: 15.0
+title: Uncertainty Ellipse Coverage and Prediction Horizon Calibration

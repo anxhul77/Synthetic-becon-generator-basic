@@ -1,0 +1,63 @@
+exp13_beacon_range:
+  title: "Beacon Range and Operating Envelope Experiment"
+  camera:
+    width: 1920
+    height: 1080
+    fx: 2000.0
+    fy: 2000.0
+    cx: 960.0
+    cy: 540.0
+  beacon:
+    initial_amplitude: 150.0
+    sigma_x: 2.0
+    sigma_y: 2.0
+    bit_depth: 8
+  optical_link:
+    wavelength_nm: 1550.0
+    beam_waist_m: 0.05
+    receiver_aperture_m: 0.10
+    optical_efficiency: 0.80
+  background:
+    level: 10.0
+    type: "uniform"
+  noise:
+    snr_db: 30.0
+
+  range_grid:
+    distances_km: [1.0, 2.0, 5.0, 10.0, 20.0]
+
+  stage_13a_geometric:
+    trials_per_condition: 50
+    lateral_displacement_m: 10.0
+
+  stage_13b_optical_power:
+    attenuation_alpha: 0.0001
+    trials_per_condition: 50
+
+  stage_13c_spot_size:
+    trials_per_condition: 50
+
+  stage_13d_atmospheric:
+    attenuation_alpha: 0.0001
+    turbulence_strength: 0.1
+    scattering_fraction: 0.05
+    trials_per_condition: 50
+
+  stage_13e_combined:
+    attenuation_alpha: 0.0001
+    trials_per_condition: 50
+
+  operating_envelope:
+    min_detection_probability: 0.95
+    max_false_alarm_probability: 0.01
+    max_angular_rmse_urad: 100.0
+    confidence_level: 0.95
+    use_confidence_bounds: true
+
+  detector:
+    threshold_sigma_multiplier: 3.5
+    min_area_px: 3
+    max_area_px: 500
+    matching_tolerance_px: 5.0
+
+  seed: 13000

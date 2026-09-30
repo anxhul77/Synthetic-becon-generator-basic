@@ -1,0 +1,55 @@
+ablation_methods:
+- error_adaptation: false
+  id: A
+  name: "Method A \xE2\u20AC\u201D Fixed EAL"
+  prediction: false
+  uncertainty_search: false
+- error_adaptation: false
+  id: B
+  name: "Method B \xE2\u20AC\u201D Predictive Fixed EAL"
+  prediction: true
+  uncertainty_search: false
+- error_adaptation: false
+  id: C
+  name: "Method C \xE2\u20AC\u201D Uncertainty-Adaptive EAL"
+  prediction: true
+  uncertainty_search: true
+- error_adaptation: true
+  id: D
+  name: "Method D \xE2\u20AC\u201D Full Adaptive EAL"
+  prediction: true
+  uncertainty_search: true
+eal:
+  acq_radius_px: 15.0
+  consec_frames_acq: 3
+  fixed_amplitude_px: 150.0
+  gamma_coverage: 2.4477467707840477
+  lambda_adapt: 12.5
+  max_amplitude_px: 350.0
+experiment_id: exp21_ablation_study
+motion_models:
+- name: constant_velocity
+  vx_px_per_sec: 40.0
+  vy_px_per_sec: 20.0
+- amp_x: 150.0
+  amp_y: 100.0
+  freq_x: 0.2
+  freq_y: 0.2
+  name: sinusoidal
+- max_accel: 30.0
+  name: random_maneuver
+num_trials_per_condition: 30
+objective: Quantitatively isolate the contribution of prediction, uncertainty shaping,
+  and error adaptation across Methods A (Fixed EAL), B (Predictive Fixed EAL), C (Uncertainty-Adaptive
+  EAL), and D (Full Adaptive EAL).
+random_seed: 42
+simulation:
+  camera:
+    fx: 2000.0
+    fy: 2000.0
+    height: 1080
+    width: 1920
+  fps: 30.0
+  search_duration_sec: 5.0
+  total_duration_sec: 15.0
+title: Ablation Study of FSOC Coarse Search Components
