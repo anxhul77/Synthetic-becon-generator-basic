@@ -1,0 +1,3 @@
+Evaluation Mode,Sample Count N,RMSE (px),Mean Error (px),Median Error (px),P95 Error (px),95% CI (px),Use Case
+A. ORACLE-ROI ESTIMATOR MODE (Estimator Isolation Only),30,0.1947,0.171,0.1482,0.3269,±0.0339,Estimator performance ceiling validation
+B. BLIND END-TO-END MODE (Full Tracker Pipeline),30,1.084,0.9663,1.0,1.8658,±0.1788,End-to-End PAT system performance evidence

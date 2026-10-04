@@ -47,6 +47,20 @@ class PinholeCamera:
         v = self.cy + self.fy * np.tan(theta_y)
         return float(u), float(v)
 
+    @classmethod
+    def from_fov(cls, width: int = 640, height: int = 480,
+                 fov_x_deg: float = 4.0, fov_y_deg: float = 3.0,
+                 fps: float = 30.0) -> "PinholeCamera":
+        """
+        Creates PinholeCamera instance from target FOV in degrees and resolution.
+        Calculates exact focal lengths: fx = width / (2 * tan(fov_x / 2)).
+        """
+        fx = float(width / (2.0 * np.tan(np.radians(fov_x_deg / 2.0))))
+        fy = float(height / (2.0 * np.tan(np.radians(fov_y_deg / 2.0))))
+        cx = float(width / 2.0)
+        cy = float(height / 2.0)
+        return cls(width=width, height=height, fx=fx, fy=fy, cx=cx, cy=cy, fps=fps)
+
     def to_dict(self) -> dict:
         return {
             "width": self.width,

@@ -17,12 +17,14 @@ class Exp00Validation(BaseExperiment):
     Verifies that synthetic image generation produces beacons precisely at specified true subpixel coordinates
     and validates subpixel localization recovery algorithms.
     """
-    def __init__(self, config_file: str = "config/experiments.yaml", gen_config_file: str = "config/generator_config.yaml"):
+    def __init__(self, config_file: str = "config/experiments.yaml", gen_config_file: str = "config/generator_config.yaml",
+                 results_dir: str = "results"):
         super().__init__(
             experiment_id="exp00",
             title="Ground-Truth Beacon Generator Validation",
             objective="Verify that the generator correctly produces a beacon at the requested position and all ground-truth metadata are correct.",
-            hypothesis="Under zero/negligible noise, subpixel localization algorithms (Intensity-Weighted Centroid and Gaussian Fitting) can recover the ground-truth beacon position within 0.05 pixels radial error."
+            hypothesis="Under zero/negligible noise, subpixel localization algorithms (Intensity-Weighted Centroid and Gaussian Fitting) can recover the ground-truth beacon position within 0.05 pixels radial error.",
+            results_dir=results_dir
         )
         self.config_file = config_file
         self.gen_config_file = gen_config_file

@@ -117,6 +117,33 @@ class AberratedPSF(PSFModel):
         return amplitude * g_core * mod_clipped
 
 
+class TurbulentPSF(PSFModel):
+    """
+    Turbulent PSF model:
+    Simulates atmospheric turbulence degradation (scintillation, beam broadening, speckle).
+    Effective PSF width scales with turbulence strength (Cn2 / Fried parameter r0)
+    and incorporates asymmetric speckle modulations.
+    """
+    def __init__(self, sigma_nominal: float = 2.0, cn2: float = 1e-14, r0_cm: float = 5.0, speckle_strength: float = 0.15):
+        self.sigma_nominal = float(sigma_nominal)
+        self.cn2 = float(cn2)
+        self.r0_cm = float(r0_cm)
+        self.speckle_strength = float(speckle_strength)
+        # Broadening factor inversely proportional to r0
+        self.sigma_turb = float(np.sqrt(self.sigma_nominal ** 2 + max(0.0, (10.0 / max(0.1, r0_cm)) - 1.0)))
+
+    def render(self, xx: np.ndarray, yy: np.ndarray, x0: float, y0: float, amplitude: float) -> np.ndarray:
+        x_norm = (xx - x0) / self.sigma_turb
+        y_norm = (yy - y0) / self.sigma_turb
+        r_sq = x_norm ** 2 + y_norm ** 2
+
+        g_core = np.exp(-0.5 * r_sq)
+        # Add spatial speckle modulation representing phase screen turbulence effect
+        speckle = 1.0 + self.speckle_strength * (np.cos(2.0 * x_norm) * np.sin(2.0 * y_norm) + 0.5 * np.cos(3.0 * y_norm))
+        mod_clipped = np.maximum(0.0, speckle)
+        return amplitude * g_core * mod_clipped
+
+
 def get_psf_model(psf_type: str = "gaussian", **kwargs) -> PSFModel:
     """Factory function for instantiating PSF models from configuration parameters."""
     psf_type = str(psf_type).lower().strip()
@@ -138,14 +165,22 @@ def get_psf_model(psf_type: str = "gaussian", **kwargs) -> PSFModel:
             sigma_nominal=float(kwargs.get("sigma_nominal", kwargs.get("sigma", 2.0))),
             sigma_defocus=float(kwargs.get("sigma_defocus", kwargs.get("blur_sigma_px", 0.0)))
         )
-    elif psf_type == "aberrated":
+    elif psf_type in ["aberrated", "aberration"]:
         return AberratedPSF(
             sigma=float(kwargs.get("sigma", 2.0)),
             aberration_type=kwargs.get("aberration_type", "coma"),
             strength_waves=float(kwargs.get("strength_waves", 0.1))
+        )
+    elif psf_type in ["turbulence", "turbulent", "atmospheric_turbulence"]:
+        return TurbulentPSF(
+            sigma_nominal=float(kwargs.get("sigma_nominal", kwargs.get("sigma", 2.0))),
+            cn2=float(kwargs.get("cn2", 1e-14)),
+            r0_cm=float(kwargs.get("r0_cm", 5.0)),
+            speckle_strength=float(kwargs.get("speckle_strength", 0.15))
         )
     else:
         return GaussianPSF(
             sigma_x=float(kwargs.get("sigma_x", kwargs.get("sigma", 2.0))),
             sigma_y=float(kwargs.get("sigma_y", kwargs.get("sigma", 2.0)))
         )
+

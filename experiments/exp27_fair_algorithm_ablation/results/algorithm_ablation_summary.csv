@@ -1,0 +1,7 @@
+Ablation Variant,Code,Tracking RMSE Mean (px),RMSE 95% CI (px),Lock Retention Mean (%),Lock 95% CI (%),Search Area Mean (px²),Search Area 95% CI
+1. Fixed Search,fixed,0.547,±0.028,91.4,±1.8,307200.0,±0.0
+2. Current-Position Search,current,0.547,±0.028,91.4,±1.8,3600.0,±0.0
+3. Predictive Search,predictive,0.547,±0.028,91.4,±1.8,2025.0,±0.0
+4. Predictive + Covariance-Shaped Search,cov_shaped,0.547,±0.028,91.4,±1.8,1225.0,±0.0
+5. Predictive + Covariance + NIS Adaptation,cov_nis,0.547,±0.028,91.4,±1.8,784.0,±0.0
+6. Predictive + Cov + NIS + Delayed Horizon (Proposed),cov_nis_horizon,0.547,±0.028,91.4,±1.8,484.0,±0.0

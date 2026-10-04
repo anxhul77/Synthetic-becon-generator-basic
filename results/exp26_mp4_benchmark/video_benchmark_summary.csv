@@ -1,0 +1,2 @@
+Operational Mode,Total Frames Processed,Lock Retention (%),Tracking RMSE (px),Max Error (px),Average Pipeline Throughput (FPS),PTZ Bypass Status,Runtime GT Access
+MP4 Video Benchmark Mode,150,89.3,0.412,1.561,490.6,Enabled (Full Frame),NO (Strict Offline Comparison)

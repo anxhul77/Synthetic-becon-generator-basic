@@ -19,6 +19,10 @@ class BaseExperiment:
         self.objective = objective
         self.hypothesis = hypothesis
         self.results_dir = results_dir
+        # Keep alternate verification runs self-contained instead of writing
+        # to the repository's shared reports tree.
+        if reports_dir == "reports" and os.path.normpath(results_dir) != os.path.normpath("results"):
+            reports_dir = os.path.join(results_dir, "reports")
         self.reports_dir = reports_dir
 
         self.exp_results_dir = os.path.join(self.results_dir, self.experiment_id)

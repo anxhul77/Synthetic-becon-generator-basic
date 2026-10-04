@@ -82,7 +82,8 @@ class ClassicalBeaconDetector:
         peaks = ndimage.maximum(img_arr, labels, index=valid_indices)
         sums = ndimage.sum_labels(img_arr, labels, index=valid_indices)
 
-        # 4. Candidate Selection Rule: Select primary candidate with max peak intensity (tie-breaker: sum intensity)
+        # 4. Select by image evidence only. Ground truth, when supplied, is
+        # used below solely for post-hoc scoring and never for selection.
         best_i = int(np.lexsort((sums, peaks))[-1])
 
         x_box = int(valid_stats[best_i, cv2.CC_STAT_LEFT])
@@ -107,6 +108,26 @@ class ClassicalBeaconDetector:
             "y_est": float(yc)
         }
 
+        # Preserve all candidates for honest false-candidate accounting and
+        # diagnostics. Secondary candidates retain component centroids; only
+        # the selected candidate receives the subpixel weighted centroid.
+        candidates = []
+        for i, label_id in enumerate(valid_indices):
+            left = int(valid_stats[i, cv2.CC_STAT_LEFT])
+            top = int(valid_stats[i, cv2.CC_STAT_TOP])
+            width = int(valid_stats[i, cv2.CC_STAT_WIDTH])
+            height = int(valid_stats[i, cv2.CC_STAT_HEIGHT])
+            candidates.append({
+                "label": int(label_id),
+                "bbox": (left, top, left + width, top + height),
+                "area": int(valid_stats[i, cv2.CC_STAT_AREA]),
+                "peak": float(peaks[i]),
+                "sum": float(sums[i]),
+                "x_est": float(valid_centroids[i, 0]),
+                "y_est": float(valid_centroids[i, 1]),
+                "is_primary": bool(i == best_i),
+            })
+
         # Vectorized candidate classification relative to ground truth (if provided)
         matching_count = 0
         false_candidate_count = num_cand
@@ -125,8 +146,7 @@ class ClassicalBeaconDetector:
             "matching_count": matching_count,
             "false_candidate_count": false_candidate_count,
             "primary_candidate": best_cand,
-            "candidates": [best_cand],
+            "candidates": candidates,
             "component_latency_ms": component_latency_ms,
             "localization_latency_ms": localization_latency_ms
         }
-

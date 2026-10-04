@@ -40,6 +40,7 @@ class SyntheticBeaconGenerator:
                        bit_depth: int = 8,
                        beacon_present: bool = True,
                        distractors: list[dict] = None,
+                       noise_reference_amplitude: float = None,
                        **kwargs) -> tuple[np.ndarray, dict]:
         
         if seed is not None:
@@ -114,7 +115,11 @@ class SyntheticBeaconGenerator:
         noiseless_image = signal + background
 
         # 5. Sensor Noise Addition
-        noise_model = GaussianNoise(snr_db=snr_db, amplitude=attenuated_amplitude)
+        noise_ref_amp = (attenuated_amplitude if noise_reference_amplitude is None
+                         else float(noise_reference_amplitude))
+        if noise_ref_amp < 0.0:
+            raise ValueError("noise_reference_amplitude must be non-negative")
+        noise_model = GaussianNoise(snr_db=snr_db, amplitude=noise_ref_amp)
         noisy_image, sigma_n = noise_model.add_noise(noiseless_image, rng)
 
         # 6. Quantization / Clipping to Image uint8 or float format
@@ -125,9 +130,9 @@ class SyntheticBeaconGenerator:
             clipped_image = noisy_image
 
         if bit_depth == 8:
-            synthetic_image = np.round(clipped_image).astype(np.uint8)
+            synthetic_image = clipped_image.astype(np.uint8)
         else:
-            synthetic_image = clipped_image.astype(np.float64)
+            synthetic_image = clipped_image.astype(np.float32)
 
         # 7. Angular Ground-Truth Calculation
         if beacon_present:
@@ -156,6 +161,9 @@ class SyntheticBeaconGenerator:
             "sigma_y": float(sigma_y),
             "snr_db": float(snr_db),
             "sigma_n": float(sigma_n),
+            "noise_reference_amplitude": float(noise_ref_amp),
+            "received_snr_db": (float(20.0 * np.log10(attenuated_amplitude / sigma_n))
+                                 if attenuated_amplitude > 0.0 and sigma_n > 0.0 else None),
             "psf_type": psf_type,
             "noise_type": "gaussian",
             "range_km": float(range_km),

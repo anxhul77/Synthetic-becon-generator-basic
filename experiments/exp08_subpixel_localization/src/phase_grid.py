@@ -9,6 +9,10 @@ def generate_controlled_phase_grid(steps: List[float] = None) -> List[Tuple[floa
     """
     if steps is None:
         steps = DEFAULT_PHASE_STEPS
+    elif isinstance(steps, (int, np.integer)):
+        if int(steps) < 1:
+            raise ValueError("phase grid step count must be positive")
+        steps = np.arange(int(steps), dtype=np.float64) / float(int(steps))
     grid = []
     for px in steps:
         for py in steps:

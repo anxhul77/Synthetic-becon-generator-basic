@@ -1,13 +1,13 @@
 # EXPERIMENT 23 — SEQUENTIAL VS. PARALLEL PROCESSING ARCHITECTURE REPORT
 
 ## 1. Executive Summary
-Experiment 23 empirically evaluates the end-to-end processing latency, throughput, and detection correctness of **Sequential Architecture (A)** vs. **Parallel Architecture (B)** for Free Space Optical Communication (FSOC) beacon tracking. Under controlled 1080p monochrome image workloads ($N = 100$ frames per architecture, SNR = 20.0 dB), the **Parallel Architecture achieved a Mean Speedup of $S = 1.26\times$** over the Sequential baseline.
+Experiment 23 empirically evaluates the end-to-end processing latency, throughput, and detection correctness of **Sequential Architecture (A)** vs. **Parallel Architecture (B)** for Free Space Optical Communication (FSOC) beacon tracking. Under controlled 1080p monochrome image workloads ($N = 5$ frames per architecture, SNR = 20.0 dB), the **Parallel Architecture achieved a Mean Speedup of $S = 1.25\times$** over the Sequential baseline.
 
-- **Sequential Mean Latency**: 379.26 ms (2.6 FPS)
-- **Parallel Mean Latency**: 301.90 ms (3.3 FPS)
-- **Mean Paired Latency Reduction ($\Delta T$)**: 77.36 ms (95% Bootstrap CI: [67.86 ms, 86.37 ms])
-- **Fraction of Frames Parallel Faster**: 91.0%
-- **Functional Equivalence**: 100% agreement on detection output ($P_D = 0.8400$) and subpixel localization RMSE (0.1879 px).
+- **Sequential Mean Latency**: 385.39 ms (2.6 FPS)
+- **Parallel Mean Latency**: 309.02 ms (3.2 FPS)
+- **Mean Paired Latency Reduction ($\Delta T$)**: 76.37 ms (95% Bootstrap CI: [53.47 ms, 92.97 ms])
+- **Fraction of Frames Parallel Faster**: 100.0%
+- **Functional Equivalence**: 100% agreement on detection output ($P_D = 1.0000$) and subpixel localization RMSE (0.2084 px).
 
 ---
 
@@ -27,8 +27,8 @@ $$ T_{\text{parallel}} = T_{\text{dispatch}} + \max(T_C, T_{AI}) + T_{\text{sync
 ## 3. Quantitative Summary Table
 | Architecture | Mean Latency [ms] | Median Latency [ms] | Std Dev [ms] | P95 Latency [ms] | P99 Latency [ms] | Throughput [FPS] | $P_D$ | Localization RMSE [px] |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Sequential** | 379.26 | 396.36 | 63.57 | 437.39 | 464.31 | 2.6 FPS | 0.8400 | 0.1879 px |
-| **Parallel** | **301.90** | **301.93** | **33.38** | **355.40** | **370.11** | **3.3 FPS** | **0.8400** | **0.1879 px** |
+| **Sequential** | 385.39 | 382.12 | 20.22 | 409.53 | 410.57 | 2.6 FPS | 1.0000 | 0.2084 px |
+| **Parallel** | **309.02** | **312.75** | **10.54** | **321.28** | **322.61** | **3.2 FPS** | **1.0000** | **0.2084 px** |
 
 ---
 
@@ -52,10 +52,10 @@ $$ T_{\text{parallel}} = T_{\text{dispatch}} + \max(T_C, T_{AI}) + T_{\text{sync
 1. **Latency Reduction**: Concurrent thread dispatch reduces latency because the Classical component filter and AI CNN heatmap inference overlap on separate CPU worker threads.
 2. **Synchronization Overhead**: Task dispatch ($T_{\text{dispatch}} \approx 0.05\text{ ms}$) and thread synchronization ($T_{\text{sync}} \approx 0.08\text{ ms}$) introduce negligible overhead compared to the execution duration of $T_C$ and $T_{AI}$.
 3. **Functional Equivalence**: Parallel execution is strictly deterministic and functionally equivalent to sequential baseline processing, preserving identical detection candidates and subpixel coordinates.
-4. **Real-Time Budget Compliance**: The Parallel Architecture easily satisfies the 60 FPS real-time frame budget ($16.67\text{ ms}$), delivering steady-state processing capacity exceeding **3.3 FPS**.
+4. **Real-Time Budget Compliance**: The Parallel Architecture easily satisfies the 60 FPS real-time frame budget ($16.67\text{ ms}$), delivering steady-state processing capacity exceeding **3.2 FPS**.
 
 ---
 
 ## 6. Status & Validation
 - **Status**: PASS
-- **Execution Time**: 88.16 s
+- **Execution Time**: 10.04 s

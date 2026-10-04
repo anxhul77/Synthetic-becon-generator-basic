@@ -12,13 +12,13 @@ from experiments.exp16_motion_framerate.src.run_experiment import Exp16MotionFra
 
 def test_angular_velocity_conversion_math():
     """Verify angular velocity to pixel velocity and inter-frame displacement math."""
-    # 1 deg/s at f=2000 px -> v = 2000 * tan(1 deg in rad) = 2000 * 0.017455 = 34.91 px/s
-    v_px = angular_velocity_to_pixel_velocity(omega_deg_per_sec=1.0, focal_length_px=2000.0)
-    assert np.isclose(v_px, 34.91, atol=0.2)
+    # 1 deg/s at SIH f=9163.66 px -> v = 9163.66 * tan(1 deg) = 159.94 px/s
+    v_px = angular_velocity_to_pixel_velocity(omega_deg_per_sec=1.0, focal_length_px=9163.66)
+    assert np.isclose(v_px, 159.94, atol=0.5)
 
-    # At 30 FPS: delta_s = 34.91 / 30 = 1.16 px/frame
-    disp = compute_interframe_displacement(omega_deg_per_sec=1.0, fps=30.0, focal_length_px=2000.0)
-    assert np.isclose(disp["delta_s_px_per_frame"], 1.16, atol=0.05)
+    # At 30 FPS SIH update rate: delta_s_target = 159.94 / 30 = 5.33 px/frame
+    disp = compute_interframe_displacement(omega_deg_per_sec=1.0, fps=30.0, focal_length_px=9163.66, jitter_px_per_frame=0.0)
+    assert np.isclose(disp["delta_s_target_px"], 5.33, atol=0.2)
 
 def test_exp16_mini_execution_and_artifacts():
     """Verify Exp16 end-to-end execution on mini scale (2 trials/condition)."""

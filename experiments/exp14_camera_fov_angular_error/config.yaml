@@ -1,13 +1,13 @@
 exp14_camera_fov_angular_error:
   id: "exp14_camera_fov_angular_error"
   title: "Camera FOV and Angular Pointing Error Analysis"
-  objective: "Quantify physical angular pointing error e_theta (in microradians) as a function of camera focal length f_x, f_y, sensor FOV, off-axis radial field position, and SNR."
-  focal_lengths_px:
-    - 500.0
-    - 1000.0
-    - 2000.0
-    - 4000.0
-    - 8000.0
+  objective: "Quantify physical pointing error e_theta (in microradians) using exact arctan pinhole projections for SIH camera (640x480 resolution, 4x3 deg default FOV, 30 Hz update rate, PTZ speeds 5-10 deg/s) across user-configurable FOVs, sensor radial positions, and SNR levels."
+  target_fovs_deg:
+    - 1.0
+    - 2.0
+    - 4.0
+    - 8.0
+    - 16.0
   snr_levels_db:
     - 5.0
     - 10.0
@@ -16,10 +16,10 @@ exp14_camera_fov_angular_error:
     - 30.0
   radial_offsets_px:
     - 0.0
+    - 50.0
+    - 100.0
+    - 150.0
     - 200.0
-    - 400.0
-    - 600.0
-    - 800.0
   background_level: 10.0
   psf_sigma: 2.0
   roi_size: 31
@@ -33,10 +33,16 @@ exp14_camera_fov_angular_error:
   confidence_level: 0.95
   bootstrap_iterations: 2000
   camera:
-    width: 1920
-    height: 1080
-    cx: 960.0
-    cy: 540.0
+    width: 640
+    height: 480
+    cx: 320.0
+    cy: 240.0
+    default_fov_x_deg: 4.0
+    default_fov_y_deg: 3.0
+    fps: 30.0
+    max_ptz_speed_deg_s_list:
+      - 5.0
+      - 10.0
   localization_methods:
     - "Intensity-Weighted Centroid"
     - "Gaussian Fitting"

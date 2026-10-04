@@ -3,7 +3,7 @@ from typing import Dict, Any
 
 def angular_velocity_to_pixel_velocity(
     omega_deg_per_sec: float,
-    focal_length_px: float = 2000.0
+    focal_length_px: float = 9163.66
 ) -> float:
     """
     Converts beacon angular velocity omega (deg/s) into focal plane pixel velocity (px/s)
@@ -16,13 +16,18 @@ def angular_velocity_to_pixel_velocity(
 def compute_interframe_displacement(
     omega_deg_per_sec: float,
     fps: float,
-    focal_length_px: float = 2000.0
+    focal_length_px: float = 9163.66,
+    jitter_px_per_frame: float = 0.0
 ) -> Dict[str, float]:
     """
-    Computes inter-frame displacement Delta s (px/frame) and angular displacement per frame.
+    Computes inter-frame target displacement Delta s_target, camera jitter Delta s_jitter,
+    and total combined displacement Delta s_total (px/frame).
     """
     v_px_per_sec = angular_velocity_to_pixel_velocity(omega_deg_per_sec, focal_length_px)
-    delta_s_px = float(v_px_per_sec / fps)
+    delta_s_target = float(v_px_per_sec / fps)
+    delta_s_jitter = float(jitter_px_per_frame)
+    delta_s_total = float(np.sqrt(delta_s_target**2 + delta_s_jitter**2))
+
     omega_per_frame_deg = float(omega_deg_per_sec / fps)
     omega_per_frame_urad = float(np.deg2rad(omega_per_frame_deg) * 1e6)
 
@@ -31,7 +36,9 @@ def compute_interframe_displacement(
         "fps": float(fps),
         "focal_length_px": float(focal_length_px),
         "v_px_per_sec": v_px_per_sec,
-        "delta_s_px_per_frame": delta_s_px,
+        "delta_s_target_px": delta_s_target,
+        "delta_s_jitter_px": delta_s_jitter,
+        "delta_s_px_per_frame": delta_s_total,
         "omega_per_frame_deg": omega_per_frame_deg,
         "omega_per_frame_urad": omega_per_frame_urad
     }

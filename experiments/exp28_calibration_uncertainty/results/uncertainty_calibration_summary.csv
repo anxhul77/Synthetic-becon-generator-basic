@@ -1,0 +1,7 @@
+Condition,Motion Model,Camera Jitter (px),Adaptive Q Enabled,Mean NIS,Empirical Coverage 50%,Empirical Coverage 90%,Empirical Coverage 95%,Consistency Status
+Straight-Line Constant Vel,constant_velocity,0.0,True,32.71,94.8% (Target: 50%),99.4% (Target: 90%),99.4% (Target: 95%),CONSISTENT
+Circular Motion,sinusoidal,0.0,True,32.71,94.8% (Target: 50%),99.4% (Target: 90%),99.4% (Target: 95%),CONSISTENT
+Sinusoidal Motion,sinusoidal,0.0,True,32.71,94.8% (Target: 50%),99.4% (Target: 90%),99.4% (Target: 95%),CONSISTENT
+Sudden Acceleration Mismatch,accelerating,0.0,True,32.71,94.8% (Target: 50%),99.4% (Target: 90%),99.4% (Target: 95%),CONSISTENT
+Camera Motion & Jitter (+-20 px),constant_velocity,20.0,True,109.78,7.9% (Target: 50%),34.9% (Target: 90%),42.9% (Target: 95%),NEEDS_INFLATION
+Model Mismatch (Unadapted Q),accelerating,0.0,False,32.71,94.8% (Target: 50%),99.4% (Target: 90%),99.4% (Target: 95%),CONSISTENT

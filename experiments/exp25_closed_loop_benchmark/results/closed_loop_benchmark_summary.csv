@@ -1,0 +1,12 @@
+Scenario,Acquisition Time (s),Tracking RMSE (px),Max Error (px),Lock Retention (%),Target Loss (%),Reacquisition Time (ms),End-to-End FPS,PTZ Command Rate (px/f),Search Path Length (px)
+Straight-Line Motion,0.0,0.463,1.828,86.0,14.0,0.0,124.8,37.7,1216.3
+Circular Motion,0.0,0.463,1.828,86.0,14.0,0.0,124.9,37.7,1216.3
+Figure-Eight Motion,0.0,0.463,1.828,86.0,14.0,0.0,126.5,37.7,1216.3
+Random Walk Motion,0.0,0.463,1.828,86.0,14.0,0.0,125.7,37.7,1216.3
+Sinusoidal Motion,0.0,0.463,1.828,86.0,14.0,0.0,124.7,37.7,1216.3
+Sudden Acceleration,0.0,0.463,1.828,86.0,14.0,0.0,127.0,37.7,1216.3
+Target Entering Near FOV Boundary,0.0,0.463,1.828,86.0,14.0,0.0,126.3,37.7,1216.3
+Target Leaving & Re-entering FOV,0.0,0.463,1.828,86.0,14.0,0.0,124.0,37.7,1216.3
+Camera Jitter (+-20 px),0.0,1.945,4.975,25.3,74.7,0.0,161.1,37.7,1908.4
+Platform Motion (+-10 px),0.0,0.952,2.362,25.3,74.7,0.0,145.1,37.7,1476.0
+Atmospheric Haze (Low SNR),0.0,249.709,638.23,22.0,78.0,0.0,179.7,37.27,7990.9

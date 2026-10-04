@@ -1,0 +1,12 @@
+Scenario ID,Scenario Name,Trajectory Hash,Acquisition Time,Tracking RMSE (px),Max Error (px),Lock Retention (%),Target Loss (%),Reacquisition Time,End-to-End FPS,PTZ Command Rate (px/f),Search Path Length (px)
+straight_line,Straight-Line Motion,df016c308e,0.067 s,0.334,1.506,97.3,2.7,100.0 ms,20.7,33.72,205.3
+circular,Circular Motion,f2cc38cb27,0.067 s,30.109,244.558,44.0,56.0,200.0 ms,20.0,34.62,1153.2
+figure_eight,Figure-Eight Motion,45e09b7cbb,0.067 s,35.999,216.942,47.3,52.7,221.6 ms,19.9,33.73,1427.7
+random_walk,Random Walk Motion,88d1a24e02,0.067 s,0.324,0.985,94.0,6.0,112.5 ms,19.7,23.99,171.8
+sinusoidal,Sinusoidal Motion,7a9291711e,0.067 s,1.769,3.0,42.7,57.3,210.0 ms,22.5,34.56,2039.2
+accelerating,Sudden Acceleration,bcfddb8590,0.067 s,0.357,1.414,94.0,6.0,116.7 ms,20.4,30.95,389.9
+fov_boundary_entry,FOV Boundary Entry,f1a8fa5228,0.133 s,0.353,1.12,94.7,5.3,100.0 ms,19.6,37.7,638.4
+fov_exit_reentry,FOV Exit & Re-entry,ac4ede3131,0.067 s,0.306,1.257,96.8,3.2,100.0 ms,22.4,36.79,424.2
+camera_jitter,Camera Jitter (+-20 px),8d53400863,0.267 s,51.75,378.678,42.0,58.0,208.3 ms,22.1,33.9,2274.7
+platform_motion,Platform Motion (+-10 px),63038c6f22,0.067 s,1.313,2.675,47.3,52.7,189.4 ms,30.5,33.04,853.7
+atmospheric_degradation,Atmospheric Haze (Low SNR),c3da5b5919,1.767 s,112.898,323.507,24.0,76.0,1522.2 ms,57.3,35.43,3635.9

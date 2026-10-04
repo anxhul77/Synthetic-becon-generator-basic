@@ -1,55 +1,45 @@
-# EXPERIMENT 14 REPORT: CAMERA FOV AND ANGULAR POINTING ERROR
+# EXPERIMENT 14 REPORT: SIH CAMERA FOV & FOUR-METRIC ANGULAR ERROR ANALYSIS
 
-## 1. Experiment Overview & Research Objectives
-- **Experiment ID**: exp14_camera_fov_angular_error
-- **Title**: Camera FOV and Angular Pointing Error Analysis
-- **Primary Research Question**: How does physical pointing angle error $e_\theta$ (in microradians $\mu\text{rad}$) scale with camera focal length ($f_x, f_y$), sensor Field of View ($\text{FOV}_x^\circ$), sensor radial field offsets, and signal-to-noise ratio?
-- **Hypothesis**: While pixel localization error ($e_r\text{ px}$) is invariant to camera focal length, physical angular pointing error ($e_\theta$) scales inversely with focal length ($e_\theta = e_r / f$). Telescopic optics ($f = 8000\text{ px}$, $\text{FOV}_x = 13.6^\circ$) achieve a **16x precision gain** ($13.7\ \mu\text{rad}$) over wide-angle tracking optics ($f = 500\text{ px}$, $\text{FOV}_x = 125.0^\circ$, $220.0\ \mu\text{rad}$).
+## 1. Executive Summary & SIH Camera Parameters
+- **Sensor Resolution**: $640 \times 480$ pixels
+- **Problem Statement Default FOV**: $4.0^\circ \times 3.0^\circ$ ($f_x = f_y \approx 9163.6\text{ px}$)
+- **Frame Update Rate**: $30\text{ Hz}$ ($\Delta t = 33.3\text{ ms}$)
+- **Maximum PTZ Slew Speeds**: $5.0^\circ/\text{s}$ and $10.0^\circ/\text{s}$
+- **User-Configurable FOV Range Tested**: $1.0^\circ$ to $16.0^\circ$
 
-## 2. Experimental Setup & Pinhole Arctan Projection Model
-- **Pinhole Arctan Projection Formulas**:
-  $$\theta_{x,\text{true}} = \tan^{-1}\left(\frac{x_{\text{true}} - c_x}{f_x}\right), \quad \theta_{y,\text{true}} = \tan^{-1}\left(\frac{y_{\text{true}} - c_y}{f_y}\right)$$
-  $$\hat{\theta}_x = \tan^{-1}\left(\frac{\hat{x} - c_x}{f_x}\right), \quad \hat{\theta}_y = \tan^{-1}\left(\frac{\hat{y} - c_y}{f_y}\right)$$
-  $$e_\theta = \sqrt{(\hat{\theta}_x - \theta_{x,\text{true}})^2 + (\hat{\theta}_y - \theta_{y,\text{true}})^2} \quad [\text{rad}]$$
-- **Sensor Parameters**: Resolution $1920 \times 1080$ px, Principal Point $(c_x, c_y) = (960.0, 540.0)$ px.
-- **Evaluated Focal Lengths**: $f \in \{500, 1000, 2000, 4000, 8000\}$ px ($\text{FOV}_x \in \{125.0^\circ, 87.6^\circ, 51.3^\circ, 26.9^\circ, 13.6^\circ\}$).
+## 2. Four Distinct Error Definitions
+1. **Pixel Localization Error ($e_{\text{px}}$)**: Image-space subpixel offset between ground-truth and estimated beacon position:
+   $$e_{\text{px}} = \sqrt{(\hat{x} - x_{\text{gt}})^2 + (\hat{y} - y_{\text{gt}})^2} \quad [\text{px}]$$
+2. **Camera Pointing Error ($e_{\text{cam}}$)**: Physical line-of-sight angular projection error through pinhole optics:
+   $$e_{\text{cam}} = \sqrt{(\hat{\theta}_x - \theta_{x,\text{true}})^2 + (\hat{\theta}_y - \theta_{y,\text{true}})^2} \times 10^6 \quad [\mu\text{rad}]$$
+3. **Beacon Angular Error ($e_{\text{beacon}}$)**: True angular offset of the beacon from the camera optical axis:
+   $$\theta_{\text{beacon}} = \sqrt{\theta_{x,\text{true}}^2 + \theta_{y,\text{true}}^2} \times 10^6 \quad [\mu\text{rad}]$$
+4. **PTZ Command Error ($e_{\text{ptz}}$)**: Residual angular command lag after 30 Hz gimbal velocity saturation ($\Delta \theta_{\text{max}} = \omega_{\text{max}} \cdot \Delta t$):
+   $$e_{\text{ptz}} = \max\left(0, e_{\text{cam}} - \Delta \theta_{\text{max}}\right) \quad [\mu\text{rad}]$$
 
-## 3. Primary FOV & Pointing Precision Summary Table
+## 3. FOV & Pointing Precision Summary Table (SIH Camera Configuration)
 
-| Focal Length f (px) | Camera FOV_x (deg) | Paraxial Scale (μrad/px) | Pixel RMSE (px) | Gaussian Fit Angular RMSE (μrad) | PSF Fit Angular RMSE (μrad) | Centroid Angular RMSE (μrad) | Pointing Precision Gain vs Base |
+| FOV_x (deg) | Focal Length f (px) | Paraxial Scale (μrad/px) | Pixel RMSE (px) | Gaussian Fit Angular RMSE (μrad) | PSF Fit Angular RMSE (μrad) | Centroid Angular RMSE (μrad) | Precision Gain vs Wide FOV (16°) |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| 500 px | 125.0° | 2000.0 μrad/px | 0.4008 px | 799.12 μrad | 761.82 μrad | 1381.51 μrad | +0.0% |
-| 1000 px | 87.7° | 1000.0 μrad/px | 0.3821 px | 381.84 μrad | 366.94 μrad | 809.93 μrad | +52.2% |
-| 2000 px | 51.3° | 500.0 μrad/px | 0.3576 px | 178.79 μrad | 179.41 μrad | 364.17 μrad | +77.6% |
-| 4000 px | 27.0° | 250.0 μrad/px | 0.4166 px | 104.14 μrad | 97.10 μrad | 161.78 μrad | +87.0% |
-| 8000 px | 13.7° | 125.0 μrad/px | 0.3704 px | 46.30 μrad | 46.35 μrad | 91.26 μrad | +94.2% |
+| 1.0° | 36668 px | 27.3 μrad/px | 0.3290 px | 8.97 μrad | 8.61 μrad | 18.67 μrad | +94.8% |
+| 2.0° | 18333 px | 54.5 μrad/px | 0.3835 px | 20.92 μrad | 18.93 μrad | 39.22 μrad | +87.9% |
+| 4.0° | 9164 px | 109.1 μrad/px | 0.3721 px | 40.60 μrad | 37.98 μrad | 69.96 μrad | +76.4% |
+| 8.0° | 4576 px | 218.5 μrad/px | 0.3827 px | 83.59 μrad | 81.10 μrad | 156.23 μrad | +51.5% |
+| 16.0° | 2277 px | 439.2 μrad/px | 0.3925 px | 172.20 μrad | 164.28 μrad | 343.03 μrad | +0.0% |
 
 
-## 4. Key Findings & Scientific Conclusions
+## 4. Key Scientific Findings
 
-1. **Pixel Error Invariance vs Angular Scaling**:
-   - Pixel localization error remains virtually constant across focal lengths ($\approx 0.11\text{ px}$ at $15\text{ dB}$ SNR). However, physical angular pointing error decreases directly in proportion to $1/f$:
-     - At $f = 500\text{ px}$ ($\text{FOV}_x = 125.0^\circ$): $e_\theta = 220.0\ \mu\text{rad}$ ($45.4\text{ arcsec}$).
-     - At $f = 2000\text{ px}$ ($\text{FOV}_x = 51.3^\circ$): $e_\theta = 55.0\ \mu\text{rad}$ ($11.3\text{ arcsec}$).
-     - At $f = 8000\text{ px}$ ($\text{FOV}_x = 13.6^\circ$): $e_\theta = 13.7\ \mu\text{rad}$ ($2.8\text{ arcsec}$).
+1. **FOV Scaling Laws**:
+   - For a fixed pixel localization precision ($e_{\text{px}} \approx 0.035\text{ px}$ at $30\text{ dB}$ SNR), physical camera pointing error $e_{\text{cam}}$ scales linearly with FOV:
+     - At **$4.0^\circ \times 3.0^\circ$ Default SIH FOV** ($f = 9164\text{ px}$): $e_{\text{cam}} = 3.82\ \mu\text{rad}$ ($0.79\text{ arcsec}$).
+     - At **$1.0^\circ$ Telephoto FOV** ($f = 36668\text{ px}$): $e_{\text{cam}} = 0.95\ \mu\text{rad}$ ($0.20\text{ arcsec}$).
+     - At **$16.0^\circ$ Wide FOV** ($f = 2280\text{ px}$): $e_{\text{cam}} = 15.35\ \mu\text{rad}$ ($3.17\text{ arcsec}$).
 
-2. **Off-Axis Arctan Compression Effect**:
-   - Off-axis positions ($R = 800\text{ px}$ from center) experience small differential angular scale compression $d\theta/dp = 1 / (f (1 + r^2/f^2))$, reducing off-axis pixel errors when projected into angular space by up to $14\%$.
+2. **PTZ Gimbal Dynamics & Slew Rate Saturation**:
+   - At $30\text{ Hz}$ update rate ($\Delta t = 33.3\text{ ms}$), maximum single-frame angular corrections are $\Delta \theta_{5^\circ/\text{s}} = 2908.9\ \mu\text{rad}$ and $\Delta \theta_{10^\circ/\text{s}} = 5817.8\ \mu\text{rad}$.
+   - Small pointing perturbations ($e_{\text{cam}} \le 100\ \mu\text{rad}$) fall well within single-frame gimbal limits, yielding $e_{\text{ptz}} = 0\ \mu\text{rad}$. Large slews saturate maximum pan/tilt speed.
 
-3. **SNR Sensitivity in Angular Space**:
-   - At high SNR ($30\text{ dB}$), narrow FOV telescopic optics ($f = 8000\text{ px}$) achieve sub-arcsecond pointing precision ($e_\theta = 2.15\ \mu\text{rad} \approx 0.44\text{ arcsec}$).
-
-4. **Processing Latency**:
-   - Processing latency remains invariant to camera focal length: Intensity-Weighted Centroid ($0.22\text{ ms}$), Gaussian Fit ($3.85\text{ ms}$), PSF Fit ($4.10\text{ ms}$).
-
-## 5. Failure Analysis
-- **Total Recorded Failures**: 75
-- **Failure Categories**: Non-convergence at extreme low SNR ($5\text{ dB}$) or boundary displacement.
-
-## 6. Reproducibility & Artifact Output
-To execute Experiment 14:
-```bash
-python run_experiments.py --experiment 14
-```
-Results directory: `results/exp14_camera_fov_angular_error/` and `experiments/exp14_camera_fov_angular_error/results/`
-Figures generated: 10 publication-quality PNG figures in `reports/figures/exp14_camera_fov_angular_error/`.
+## 5. Failure Analysis & Latency
+- **Recorded Failures**: 163
+- **Processing Latency at 30 Hz**: Gaussian Fit ($3.8\text{ ms}$), PSF Fit ($2.8\text{ ms}$), Centroid ($0.2\text{ ms}$), easily fitting within the $33.3\text{ ms}$ frame budget.

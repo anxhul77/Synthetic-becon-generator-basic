@@ -1,0 +1,8 @@
+Deliberate ROI Offset (px),Detector ROI RMSE (px),Localizer Error True RMSE (px),Localizer Error ROI RMSE (px),Total End-to-End RMSE (px),Primary Failure Class
+0.0,0.0,0.175,0.175,0.175,NOMINAL_TRACK
+2.0,2.0,0.217,0.217,0.217,NOMINAL_TRACK
+5.0,5.0,0.208,0.208,0.208,NOMINAL_TRACK
+10.0,10.0,0.22,0.22,0.22,NOMINAL_TRACK
+20.0,20.0,18.177,18.177,18.177,detector_miss
+40.0,40.0,40.415,40.415,40.415,detector_miss
+80.0,80.0,80.202,80.202,80.202,detector_miss

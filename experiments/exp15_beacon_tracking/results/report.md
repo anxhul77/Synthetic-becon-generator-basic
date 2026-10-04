@@ -20,21 +20,21 @@
 
 | Motion Model | Estimator Engine | RMSE Pos Error (px) | RMSE Pointing Error (μrad) | Track Ratio P_track (%) | Reacquisition T_reacquire (frames) | Avg Latency (ms) |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Accelerating | Gaussian Fitting | 15.6781 px | 7819.87 μrad | 98.7% | 0.0 frames | 47.50 ms |
-| Accelerating | Intensity-Weighted Centroid | 32.3904 px | 16167.92 μrad | 100.0% | 0.0 frames | 0.42 ms |
-| Accelerating | PSF Fitting | 9.9590 px | 4965.59 μrad | 96.7% | 0.0 frames | 7.84 ms |
-| Constant Velocity | Gaussian Fitting | 0.2061 px | 103.00 μrad | 100.0% | 0.0 frames | 4.98 ms |
-| Constant Velocity | Intensity-Weighted Centroid | 3.2465 px | 1622.83 μrad | 100.0% | 0.0 frames | 0.43 ms |
-| Constant Velocity | PSF Fitting | 0.1986 px | 99.26 μrad | 100.0% | 0.0 frames | 3.83 ms |
-| Occlusion Fade | Gaussian Fitting | 0.2027 px | 101.32 μrad | 100.0% | 0.0 frames | 7.20 ms |
-| Occlusion Fade | Intensity-Weighted Centroid | 2.4599 px | 1229.78 μrad | 100.0% | 0.0 frames | 0.41 ms |
-| Occlusion Fade | PSF Fitting | 0.2025 px | 101.22 μrad | 100.0% | 0.0 frames | 4.96 ms |
-| Random Maneuver | Gaussian Fitting | 20.1586 px | 10069.04 μrad | 99.1% | 0.0 frames | 42.93 ms |
-| Random Maneuver | Intensity-Weighted Centroid | 23.7075 px | 11844.54 μrad | 100.0% | 0.0 frames | 0.41 ms |
-| Random Maneuver | PSF Fitting | 12.2893 px | 6137.62 μrad | 97.6% | 0.0 frames | 7.72 ms |
-| Sinusoidal | Gaussian Fitting | 104.6381 px | 52294.14 μrad | 96.3% | 0.0 frames | 98.58 ms |
-| Sinusoidal | Intensity-Weighted Centroid | 93.2622 px | 46611.66 μrad | 100.0% | 0.0 frames | 0.43 ms |
-| Sinusoidal | PSF Fitting | 116.0469 px | 57981.17 μrad | 95.9% | 0.0 frames | 11.71 ms |
+| Accelerating | Gaussian Fitting | 13.0559 px | 6511.23 μrad | 99.5% | 0.0 frames | 34.49 ms |
+| Accelerating | Intensity-Weighted Centroid | 31.4112 px | 15678.58 μrad | 100.0% | 0.0 frames | 0.59 ms |
+| Accelerating | PSF Fitting | 12.5037 px | 6235.17 μrad | 96.5% | 0.0 frames | 7.33 ms |
+| Constant Velocity | Gaussian Fitting | 0.1965 px | 98.17 μrad | 100.0% | 0.0 frames | 4.44 ms |
+| Constant Velocity | Intensity-Weighted Centroid | 3.1565 px | 1577.94 μrad | 100.0% | 0.0 frames | 0.58 ms |
+| Constant Velocity | PSF Fitting | 0.2147 px | 107.27 μrad | 100.0% | 0.0 frames | 3.62 ms |
+| Occlusion Fade | Gaussian Fitting | 0.1901 px | 95.01 μrad | 100.0% | 0.0 frames | 6.26 ms |
+| Occlusion Fade | Intensity-Weighted Centroid | 2.3243 px | 1161.97 μrad | 100.0% | 0.0 frames | 0.57 ms |
+| Occlusion Fade | PSF Fitting | 0.1939 px | 96.91 μrad | 100.0% | 0.0 frames | 4.39 ms |
+| Random Maneuver | Gaussian Fitting | 18.2731 px | 9104.30 μrad | 99.5% | 0.0 frames | 21.22 ms |
+| Random Maneuver | Intensity-Weighted Centroid | 26.5734 px | 13257.96 μrad | 100.0% | 0.0 frames | 0.61 ms |
+| Random Maneuver | PSF Fitting | 24.0296 px | 11980.28 μrad | 99.5% | 0.0 frames | 6.17 ms |
+| Sinusoidal | Gaussian Fitting | 104.2774 px | 52116.47 μrad | 96.5% | 0.0 frames | 99.07 ms |
+| Sinusoidal | Intensity-Weighted Centroid | 92.5314 px | 46246.30 μrad | 100.0% | 0.0 frames | 0.66 ms |
+| Sinusoidal | PSF Fitting | 94.5419 px | 47251.42 μrad | 93.0% | 0.0 frames | 12.17 ms |
 
 ## 3. Key Findings & Conclusions
 1. **Continuous Track Lock**:

@@ -17,32 +17,55 @@ def compute_exact_angular_pointing_error(
     theta_y = arctan((v - c_y) / f_y)
     e_theta = sqrt((hat_theta_x - theta_x_true)^2 + (hat_theta_y - theta_y_true)^2)
     """
+    # 1. True angles & Beacon Angular Displacement (e_beacon) - Always valid
+    tx_true, ty_true = camera.pixel_to_angle(x_true, y_true)
+    beacon_ang_rad = float(np.sqrt(tx_true**2 + ty_true**2))
+    beacon_ang_urad = float(beacon_ang_rad * 1e6)
+
     if x_est is None or y_est is None or np.isnan(x_est) or np.isnan(y_est):
         return {
-            "theta_x_true_rad": None,
-            "theta_y_true_rad": None,
+            "pixel_localization_error_px": None,
+            "theta_x_true_rad": float(tx_true),
+            "theta_y_true_rad": float(ty_true),
             "theta_x_est_rad": None,
             "theta_y_est_rad": None,
             "angular_error_x_rad": None,
             "angular_error_y_rad": None,
             "angular_error_rad": None,
             "angular_error_urad": None,
-            "angular_error_arcsec": None
+            "angular_error_arcsec": None,
+            "camera_pointing_error_urad": None,
+            "beacon_angular_error_urad": beacon_ang_urad,
+            "ptz_command_error_urad_5deg_s": None,
+            "ptz_command_error_urad_10deg_s": None
         }
 
-    # True angles
-    tx_true, ty_true = camera.pixel_to_angle(x_true, y_true)
-    # Estimated angles
-    tx_est, ty_est = camera.pixel_to_angle(x_est, y_est)
+    # 2. Pixel Localization Error (e_px) & Estimated Angles
+    err_x_px = float(x_est - x_true)
+    err_y_px = float(y_est - y_true)
+    e_px = float(np.sqrt(err_x_px**2 + err_y_px**2))
 
-    # Errors in radians
+    tx_est, ty_est = camera.pixel_to_angle(x_est, y_est)
     e_tx = float(tx_est - tx_true)
     e_ty = float(ty_est - ty_true)
     e_theta_rad = float(np.sqrt(e_tx ** 2 + e_ty ** 2))
     e_theta_urad = float(e_theta_rad * 1e6)
     e_theta_arcsec = float(e_theta_rad * (180.0 / np.pi) * 3600.0)
 
+    # 4. PTZ Command Error given 30 Hz update rate and speed limits (5 deg/s and 10 deg/s)
+    fps = camera.fps if camera.fps > 0 else 30.0
+    dt = 1.0 / fps
+    max_step_rad_5 = float(np.radians(5.0 * dt))
+    max_step_rad_10 = float(np.radians(10.0 * dt))
+
+    e_ptz_rad_5 = float(max(0.0, e_theta_rad - max_step_rad_5))
+    e_ptz_rad_10 = float(max(0.0, e_theta_rad - max_step_rad_10))
+
+    e_ptz_urad_5 = float(e_ptz_rad_5 * 1e6)
+    e_ptz_urad_10 = float(e_ptz_rad_10 * 1e6)
+
     return {
+        "pixel_localization_error_px": e_px,
         "theta_x_true_rad": float(tx_true),
         "theta_y_true_rad": float(ty_true),
         "theta_x_est_rad": float(tx_est),
@@ -51,7 +74,11 @@ def compute_exact_angular_pointing_error(
         "angular_error_y_rad": e_ty,
         "angular_error_rad": e_theta_rad,
         "angular_error_urad": e_theta_urad,
-        "angular_error_arcsec": e_theta_arcsec
+        "angular_error_arcsec": e_theta_arcsec,
+        "camera_pointing_error_urad": e_theta_urad,
+        "beacon_angular_error_urad": beacon_ang_urad,
+        "ptz_command_error_urad_5deg_s": e_ptz_urad_5,
+        "ptz_command_error_urad_10deg_s": e_ptz_urad_10
     }
 
 

@@ -122,9 +122,10 @@ Three approaches are evaluated in a **paired experiment design** across identica
 
 ## 6. Key Scientific Findings & Trade-Off Analysis
 
-1. **Failure of Baseline under High Background & Saturation:**
+1. **Failure of Baseline under High Background & Saturation Reframing:**
    - At $B_0 \ge 200$, the fixed threshold $T = 160.0$ falls below the baseline background level. Without background suppression, the entire 1080p frame exceeds $T$, causing $P_D$ to collapse to $0.0$ due to connected component saturation (100% false alarm rate).
-   - At $B_0 \ge 500$, extreme sensor saturation occurs ($>85\%$ pixels clipped to 255), completely destroying contrast information for all methods.
+   - At $B_0 \ge 500$ DN, background levels exceed the 8-bit dynamic range ($0–255$ DN), resulting in 100% sensor pixel saturation (all pixels clipped to 255).
+   - *Reframing Protocol:* In real-world 8-bit receivers, $B_0 \ge 500$ DN represents severe optical overexposure. Rather than treating saturated frames as valid inputs for algorithmic detection, sensor saturation must be explicitly flagged and reported as an operational hardware failure mode (`saturation_failure = True`).
 
 2. **Gaussian Background Subtraction Performance:**
    - **Uniform Backgrounds:** Gaussian subtraction ($\sigma = 15.0$ px) successfully removes background DC offset up to $B_0 = 200$, maintaining $P_D = 1.0$ and suppressing false alarms ($P_{FA} = 0.0$).

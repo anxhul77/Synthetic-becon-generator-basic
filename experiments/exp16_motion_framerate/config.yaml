@@ -1,7 +1,11 @@
 exp16_motion_framerate:
-  title: "Motion and Frame-Rate Operational Boundary Experiment"
+  title: "Motion and Frame-Rate Operational Boundary Experiment (SIH Camera Configuration)"
   sequence_duration_sec: 3.0
-  focal_length_px: 2000.0
+  camera_width: 640
+  camera_height: 480
+  focal_length_px: 9163.66
+  default_fov_deg: [4.0, 3.0]
+  sih_fps: 30.0
   snr_db: 15.0
   background_level: 10.0
   psf_sigma: 2.0
@@ -13,6 +17,8 @@ exp16_motion_framerate:
 
   angular_velocities_deg_per_sec: [0.1, 1.0, 5.0, 10.0, 20.0]
   camera_fps_levels: [15, 30, 60, 120]
+  pan_tilt_speeds_deg_per_sec: [5.0, 10.0]
+  platform_jitter_levels_px: [0.0, 5.0, 10.0, 20.0]
 
   tracker:
     gating_threshold_px: 15.0

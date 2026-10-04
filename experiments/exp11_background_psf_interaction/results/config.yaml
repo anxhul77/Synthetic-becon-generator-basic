@@ -11,18 +11,24 @@ background_types:
 beacon_amplitude: 150.0
 bit_depth: 8
 bootstrap_iterations: 2000
+camera:
+  cx: 960.0
+  cy: 540.0
+  fx: 2000.0
+  fy: 2000.0
+  height: 1080
+  width: 1920
 confidence_level: 0.95
 gradient_change: 100.0
-name: "Experiment 11 \u2014 Background and PSF Interaction"
-phase_grid_steps:
-- 0.0
-- 0.125
-- 0.25
-- 0.375
-- 0.5
-- 0.625
-- 0.75
-- 0.875
+id: exp11_background_psf_interaction
+localization_methods:
+- Intensity-Weighted Centroid
+- Gaussian Fitting
+- PSF Fitting
+objective: Investigate how background intensity, background type, and PSF width jointly
+  influence localization accuracy, systematic bias, fitting convergence, and runtime
+  penalties across SNR levels.
+phase_grid_steps: 8
 psf_sigma_values:
 - 1.0
 - 2.0
@@ -35,6 +41,7 @@ snr_levels_db:
 - 10.0
 - 15.0
 - 20.0
+title: Background and PSF Interaction
 trials_per_condition: 1000
 trials_per_phase: 10
 trials_per_sensitivity: 50

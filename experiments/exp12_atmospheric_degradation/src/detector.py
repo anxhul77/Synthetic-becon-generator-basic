@@ -7,7 +7,8 @@ class FullFrameBeaconDetector:
     """
     Full-Frame Classical Beacon Detector.
     Performs full-frame thresholding, connected component segmentation,
-    candidate centroid extraction, and candidate selection against ground truth matching gate.
+    candidate centroid extraction, and image-only candidate selection. Ground
+    truth is accepted only for post-hoc scoring and never selects a candidate.
     """
     def __init__(
         self,
@@ -34,7 +35,8 @@ class FullFrameBeaconDetector:
         2. Binarizes image
         3. Extracts connected components
         4. Calculates centroids of candidate blobs
-        5. Matches candidates to ground truth location (if beacon_present=True)
+        5. Selects the strongest candidate without ground truth. If ground
+           truth is supplied, reports whether that selected candidate matches.
         """
         start_time = time.perf_counter()
 
@@ -43,22 +45,27 @@ class FullFrameBeaconDetector:
         threshold = bg_mean + self.k_thresh * bg_std
 
         binary_mask = image > threshold
-        labeled_mask, num_features = label(binary_mask)
-
         candidates = []
         if num_features > 0:
-            for i in range(1, num_features + 1):
-                component_mask = (labeled_mask == i)
-                area = int(np.sum(component_mask))
+            from scipy.ndimage import find_objects
+            slices = find_objects(labeled_mask)
+            for i, sl in enumerate(slices, start=1):
+                if sl is None:
+                    continue
+                sub_labeled = labeled_mask[sl]
+                sub_img = image[sl]
+                mask = (sub_labeled == i)
+                area = int(np.sum(mask))
                 if self.min_area <= area <= self.max_area:
-                    # Center of mass of blob
-                    cy, cx = center_of_mass(image, labeled_mask, i)
+                    cy_sub, cx_sub = center_of_mass(sub_img, sub_labeled, i)
+                    cx = sl[1].start + cx_sub
+                    cy = sl[0].start + cy_sub
                     candidates.append({
                         "id": i,
                         "x_cx": float(cx),
                         "y_cy": float(cy),
                         "area": area,
-                        "peak_val": float(np.max(image[component_mask]))
+                        "peak_val": float(np.max(sub_img[mask]))
                     })
 
         detected_beacon = None
@@ -66,18 +73,17 @@ class FullFrameBeaconDetector:
         is_false_alarm = False
         min_dist = np.inf
 
-        if beacon_present and x_gt is not None and y_gt is not None:
-            # Find candidate closest to true beacon location within matching gate
-            for cand in candidates:
-                dist = float(np.sqrt((cand["x_cx"] - x_gt)**2 + (cand["y_cy"] - y_gt)**2))
-                if dist <= self.match_tol and dist < min_dist:
-                    min_dist = dist
-                    detected_beacon = cand
-                    is_detected = True
-        else:
-            # Beacon absent frame: any candidate detected is a false alarm
-            if len(candidates) > 0:
+        if candidates:
+            # Image-only selection: highest peak, then largest area.
+            detected_beacon = max(candidates, key=lambda c: (c["peak_val"], c["area"]))
+            if beacon_present and x_gt is not None and y_gt is not None:
+                min_dist = float(np.hypot(detected_beacon["x_cx"] - x_gt,
+                                          detected_beacon["y_cy"] - y_gt))
+                is_detected = bool(min_dist <= self.match_tol)
+            else:
                 is_false_alarm = True
+
+        declared_detection = bool(detected_beacon is not None)
 
         elapsed_ms = (time.perf_counter() - start_time) * 1000.0
 
@@ -87,6 +93,7 @@ class FullFrameBeaconDetector:
             "num_candidates": len(candidates),
             "candidates": candidates,
             "is_detected": is_detected,
+            "declared_detection": declared_detection,
             "is_false_alarm": is_false_alarm,
             "matched_candidate": detected_beacon,
             "matched_dist_px": min_dist if is_detected else None,

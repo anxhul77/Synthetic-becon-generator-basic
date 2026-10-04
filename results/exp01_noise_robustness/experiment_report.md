@@ -107,8 +107,10 @@ The classical baseline detector (`ClassicalBeaconDetector`) executes five determ
 3. **Conditional Localization Accuracy:**
    - For correct detections, subpixel radial RMSE is extremely accurate (0.024 px at 30 dB) and degrades gracefully as noise increases.
 
-4. **Runtime Performance:**
-   - Detector processing latency is sub-20 ms across all SNR levels, achieving >50 FPS per image.
+4. **Runtime Performance & Computational Bottleneck:**
+   - Under fixed thresholding T = 160.0 at high SNR (>=25 dB), processing latency is ~160 ms (~6 FPS).
+   - At lower SNR (<=20 dB), sensor noise spikes prolifically cross the threshold, creating up to 150,000 candidate blobs per frame. Connected-component extraction and statistics computation over these massive blob counts increase mean latency to 160–310 ms (3.2–6.2 FPS).
+   - *Note on Reframing:* Fixed thresholding causes extreme computational slowdown at low SNR due to candidate blob proliferation, demonstrating that fixed thresholding without adaptive CFAR is computationally non-viable for real-time operation.
 
 ---
 

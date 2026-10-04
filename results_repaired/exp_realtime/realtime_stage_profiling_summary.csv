@@ -1,0 +1,7 @@
+Resolution,Search Mode,Hardware Target,Sample N (Excl Warmup),1. Acq Mean (ms),2. Preproc Mean (ms),3. Detect Mean (ms),4. CNN Infer Mean (ms),5. Fusion Mean (ms),6. Localize Mean (ms),7. Kalman Mean (ms),8. Search Ctrl Mean (ms),9. Render Mean (ms),10. Log Mean (ms),Mean Loop Latency (ms),Median Latency (ms),P95 Latency (ms),P99 Latency (ms),Sustained Throughput (FPS),SIH >=20 FPS Criterion
+640x480,Cascaded ROI,CPU,40,7.56,1.29,24.68,0.02,0.1,6.52,0.08,0.19,0.5,0.1,41.05,39.8,47.93,58.9,24.4,PASS
+640x480,Full Frame,CPU,40,7.56,1.3,59.66,0.03,0.1,6.46,0.08,0.45,0.5,0.1,85.58,83.14,105.32,131.28,11.7,FAIL
+1920x1080,Cascaded ROI,CPU,40,49.08,8.24,176.05,0.0,0.1,6.49,0.08,0.25,0.5,0.1,240.89,237.46,254.74,291.86,4.2,FAIL
+1920x1080,Cascaded ROI,GPU,40,48.85,8.15,78.75,0.0,0.1,2.96,0.08,0.25,0.5,0.1,107.83,107.42,112.92,127.85,9.3,FAIL
+2000x2000,Cascaded ROI,CPU,40,95.31,15.5,347.17,0.02,0.1,8.0,0.08,0.26,0.5,0.1,467.05,462.2,505.35,524.92,2.1,FAIL
+2000x2000,Cascaded ROI,GPU,40,94.43,15.53,156.62,0.01,0.1,3.47,0.08,0.28,0.5,0.1,210.06,209.2,226.49,229.28,4.8,FAIL

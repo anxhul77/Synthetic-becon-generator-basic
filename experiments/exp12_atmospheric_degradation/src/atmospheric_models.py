@@ -22,7 +22,7 @@ class ExtendedAtmosphericModel:
         self.turbulence_strength = float(turbulence_strength)
         self.scattering_fraction = float(np.clip(scattering_fraction, 0.0, 0.95))
         self.halo_sigma = float(halo_sigma)
-        self.base_atmo = AtmosphericModel(attenuation_alpha=attenuation_alpha, range_km=range_km)
+        self.base_atmo = AtmosphericModel(attenuation_alpha=attenuation_alpha, range_km=range_km, condition="custom")
 
     def calculate_transmittance(self) -> float:
         """Returns Beer-Lambert transmittance T(L) = exp(-alpha * L)."""

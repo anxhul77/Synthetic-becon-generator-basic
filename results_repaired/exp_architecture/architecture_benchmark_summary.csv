@@ -1,0 +1,3 @@
+Architecture Mode,Sample Count N (Excl Warmup),Mean Latency (ms),Median Latency (ms),Std Dev (ms),P95 Latency (ms),P99 Latency (ms),Sustained Throughput (FPS),CPU Utilization (%),Functional Equivalence,Parallel Speedup (%)
+Sequential Single-Threaded,290,30.36,29.51,5.0,38.05,52.42,32.9,28.0,100.0% EQUIVALENT,N/A (Baseline)
+Parallel Multi-Threaded,290,23.78,23.12,4.35,29.65,44.77,42.0,45.0,100.0% EQUIVALENT,+21.7%

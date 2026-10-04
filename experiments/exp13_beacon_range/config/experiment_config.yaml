@@ -14,7 +14,8 @@ exp13_beacon_range:
     bit_depth: 8
   optical_link:
     wavelength_nm: 1550.0
-    beam_waist_m: 0.05
+    transmit_power_mw: 500.0
+    beam_waist_m: 0.025
     receiver_aperture_m: 0.10
     optical_efficiency: 0.80
   background:
@@ -31,26 +32,27 @@ exp13_beacon_range:
     lateral_displacement_m: 10.0
 
   stage_13b_optical_power:
-    attenuation_alpha: 0.0001
+    attenuation_alpha: 0.08
     trials_per_condition: 50
 
   stage_13c_spot_size:
     trials_per_condition: 50
 
   stage_13d_atmospheric:
-    attenuation_alpha: 0.0001
+    attenuation_alpha: 0.08
     turbulence_strength: 0.1
     scattering_fraction: 0.05
     trials_per_condition: 50
 
   stage_13e_combined:
-    attenuation_alpha: 0.0001
+    attenuation_alpha: 0.08
     trials_per_condition: 50
 
   operating_envelope:
     min_detection_probability: 0.95
     max_false_alarm_probability: 0.01
     max_angular_rmse_urad: 100.0
+    min_signal_amplitude_dn: 10.5
     confidence_level: 0.95
     use_confidence_bounds: true
 

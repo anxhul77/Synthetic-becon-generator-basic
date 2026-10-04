@@ -8,7 +8,8 @@ def main():
     parser.add_argument("--trials", type=int, default=None, help="Override number of trials per condition")
     parser.add_argument("--seed", type=int, default=42, help="Random seed for reproducibility")
     parser.add_argument("--config", type=str, default="config/experiments.yaml", help="Path to experiment config file")
-    parser.add_argument("--output", type=str, default="results", help="Path to output results directory")
+    parser.add_argument("--output", type=str, default="verification_results", help="Path to output results directory (separate from original results)")
+    parser.add_argument("--benchmark-mode", type=str, default="both", choices=["estimator_only", "end_to_end", "both"], help="Benchmark evaluation mode (estimator_only, end_to_end, or both)")
 
     args = parser.parse_args()
 
@@ -18,8 +19,7 @@ def main():
         print("\n====================================================")
         print("RUNNING EXPERIMENT 00: GROUND-TRUTH GENERATOR VALIDATION")
         print("====================================================\n")
-        exp = Exp00Validation(config_file=args.config)
-        exp.results_dir = args.output
+        exp = Exp00Validation(config_file=args.config, results_dir=args.output)
         df, report = exp.run()
         print("\n====================================================")
         print("EXPERIMENT 00 COMPLETED SUCCESSFULLY")
@@ -53,6 +53,17 @@ def main():
         res = exp.run(trials_override=args.trials)
         print("\n====================================================")
         print("EXPERIMENT 05 COMPLETED SUCCESSFULLY")
+        print("====================================================\n")
+    elif exp_id in ["reframed", "exp05_reframed", "05_reframed"]:
+        from experiments.exp05_reframed_benchmark import Exp05ReframedBenchmark
+        print("\n====================================================")
+        print("RUNNING REFRAMED DETECTION PREPROCESSING BENCHMARK")
+        print("====================================================\n")
+        trials = args.trials if args.trials is not None else 50
+        exp = Exp05ReframedBenchmark(results_dir=os.path.join(args.output, "exp05_reframed_benchmark"))
+        df_summary, report = exp.run_benchmark(num_trials=trials, seed=args.seed)
+        print("\n====================================================")
+        print("REFRAMED BENCHMARK COMPLETED SUCCESSFULLY")
         print("====================================================\n")
     elif exp_id in ["06", "exp06", "exp06_classical_vs_ai", "6"]:
         from experiments.exp06_classical_vs_ai import Exp06ClassicalVsAI
@@ -234,9 +245,82 @@ def main():
         print("\n====================================================")
         print("EXPERIMENT 23 COMPLETED SUCCESSFULLY")
         print("====================================================\n")
+    elif exp_id in ["24", "exp24", "exp24_sih_compliance", "a", "exp_a"]:
+        from experiments.exp24_sih_compliance import Exp24SIHCompliance
+        print("\n====================================================")
+        print("RUNNING EXPERIMENT A (24): COMPLETE SIH COMPLIANCE TEST")
+        print("====================================================\n")
+        exp = Exp24SIHCompliance(results_dir=args.output)
+        df_matrix, report = exp.run(trials_override=args.trials)
+        print("\n====================================================")
+        print("EXPERIMENT A COMPLETED SUCCESSFULLY")
+        print("====================================================\n")
+    elif exp_id in ["25", "exp25", "exp25_closed_loop_benchmark", "b", "exp_b"]:
+        from experiments.exp25_closed_loop_benchmark import Exp25ClosedLoopBenchmark
+        print("\n====================================================")
+        print("RUNNING EXPERIMENT B (25): END-TO-END CLOSED-LOOP BENCHMARK")
+        print("====================================================\n")
+        exp = Exp25ClosedLoopBenchmark(results_dir=args.output)
+        df_bench, report = exp.run(trials_override=args.trials)
+        print("\n====================================================")
+        print("EXPERIMENT B COMPLETED SUCCESSFULLY")
+        print("====================================================\n")
+    elif exp_id in ["26", "exp26", "exp26_mp4_benchmark", "c", "exp_c"]:
+        from experiments.exp26_mp4_benchmark import Exp26MP4Benchmark
+        print("\n====================================================")
+        print("RUNNING EXPERIMENT C (26): MP4 BENCHMARK MODE")
+        print("====================================================\n")
+        exp = Exp26MP4Benchmark(results_dir=args.output)
+        df_summary, report = exp.run(trials_override=args.trials)
+        print("\n====================================================")
+        print("EXPERIMENT C COMPLETED SUCCESSFULLY")
+        print("====================================================\n")
+    elif exp_id in ["27", "exp27", "exp27_fair_algorithm_ablation", "d", "exp_d"]:
+        from experiments.exp27_fair_algorithm_ablation import Exp27FairAlgorithmAblation
+        print("\n====================================================")
+        print("RUNNING EXPERIMENT D (27): FAIR ALGORITHM ABLATION")
+        print("====================================================\n")
+        exp = Exp27FairAlgorithmAblation(results_dir=args.output)
+        df_ablation, report = exp.run(trials_override=args.trials)
+        print("\n====================================================")
+        print("EXPERIMENT D COMPLETED SUCCESSFULLY")
+        print("====================================================\n")
+    elif exp_id in ["28", "exp28", "exp28_calibration_uncertainty", "e", "exp_e"]:
+        from experiments.exp28_calibration_uncertainty import Exp28CalibrationUncertainty
+        print("\n====================================================")
+        print("RUNNING EXPERIMENT E (28): CALIBRATION AND UNCERTAINTY AUDIT")
+        print("====================================================\n")
+        exp = Exp28CalibrationUncertainty(results_dir=args.output)
+        df_calib, report = exp.run(trials_override=args.trials)
+        print("\n====================================================")
+        print("EXPERIMENT E COMPLETED SUCCESSFULLY")
+        print("====================================================\n")
+    elif exp_id in ["29", "exp29", "exp29_realtime_profiling", "f", "exp_f"]:
+        from experiments.exp29_realtime_profiling import Exp29RealtimeProfiling
+        print("\n====================================================")
+        print("RUNNING EXPERIMENT F (29): REAL-TIME PROFILING & STAGE BREAKDOWN")
+        print("====================================================\n")
+        exp = Exp29RealtimeProfiling(results_dir=args.output)
+        df_prof, report = exp.run(trials_override=args.trials)
+        print("\n====================================================")
+        print("EXPERIMENT F COMPLETED SUCCESSFULLY")
+        print("====================================================\n")
+    elif exp_id in ["dual_benchmark", "e2e_psf_benchmark", "e2e_psf", "benchmark"]:
+        from processing.benchmark_evaluator import DualBenchmarkEngine
+        print("\n====================================================")
+        print(f"RUNNING DUAL EVALUATION BENCHMARK (MODE: {args.benchmark_mode.upper()})")
+        print("====================================================\n")
+        trials = args.trials if args.trials is not None else 30
+        engine = DualBenchmarkEngine(output_dir=os.path.join(args.output, "e2e_psf_benchmark"), seed=args.seed)
+        df_summary, df_raw, report = engine.run_benchmark(num_trials=trials, benchmark_mode=args.benchmark_mode)
+        print("\n====================================================")
+        print("DUAL BENCHMARK COMPLETED SUCCESSFULLY")
+        print("====================================================\n")
     else:
         print(f"Experiment '{args.experiment}' requested.")
-        print("Supported experiments: '00', '01', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23'.")
+        print("Supported experiments: '00', '01', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24' (Exp A), '25' (Exp B), '26' (Exp C), '27' (Exp D), '28' (Exp E), '29' (Exp F), 'dual_benchmark'.")
+
 
 if __name__ == "__main__":
     main()
+

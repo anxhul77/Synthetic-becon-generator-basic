@@ -90,11 +90,14 @@ class Exp06DatasetGenerator:
                 bg_level = float(rng.choice(bg_choices))
                 grad_a, grad_b = 0.0, 0.0
                 if bg_type == "horizontal":
-                    grad_a, grad_b = 100.0, 0.0
+                    # Configured gradient is total DN change across the
+                    # sensor, while GradientBackground expects DN/pixel.
+                    grad_a, grad_b = 100.0 / max(1, self.camera.width - 1), 0.0
                 elif bg_type == "vertical":
-                    grad_a, grad_b = 0.0, 100.0
+                    grad_a, grad_b = 0.0, 100.0 / max(1, self.camera.height - 1)
                 elif bg_type == "twod":
-                    grad_a, grad_b = 100.0, 100.0
+                    grad_a = 100.0 / max(1, self.camera.width - 1)
+                    grad_b = 100.0 / max(1, self.camera.height - 1)
 
                 # Distractors (false bright objects)
                 n_dist = int(rng.choice(distractor_counts))

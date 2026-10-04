@@ -4,9 +4,10 @@ import time
 import yaml
 import numpy as np
 import pandas as pd
+import cv2
 from experiments.base_experiment import BaseExperiment
 from processing.detector import ClassicalBeaconDetector
-from processing.component_filtering import get_component_filter
+from processing.component_filtering import get_component_filter, extract_component_features
 from .dataset_generator import Exp06DatasetGenerator
 from .dataset_loader import BeaconDataset, create_dataloaders
 from .ai_detector import AIBeaconDetector
@@ -162,7 +163,13 @@ class Exp06ClassicalVsAI(BaseExperiment):
             # 1. Classical Run
             t0 = time.perf_counter()
             binary_mask = (img > 160.0).astype(np.uint8)
-            filt_mask, _ = combined_filter_fn(binary_mask, img)
+            all_features = extract_component_features(img, binary_mask)
+            retained_features = combined_filter_fn(all_features)
+            filt_mask = np.zeros_like(binary_mask, dtype=np.uint8)
+            if retained_features:
+                _, labels, _, _ = cv2.connectedComponentsWithStats(binary_mask, connectivity=8)
+                retained_labels = [c["label"] for c in retained_features]
+                filt_mask[np.isin(labels, retained_labels)] = 1
             c_res = classical_det.detect(img, beacon_gt=(bx, by) if beacon_present else None, binary_mask=filt_mask)
             t1 = time.perf_counter()
             c_latency = (t1 - t0) * 1000.0

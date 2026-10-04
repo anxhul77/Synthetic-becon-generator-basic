@@ -1,0 +1,2 @@
+Total Mission Trials N,Master Seed,Baseline RMSE Mean (px),Baseline 95% CI (px),Proposed RMSE Mean (px),Proposed 95% CI (px),Mean Paired RMSE Diff (px),Paired Diff 95% CI (px),Paired t-Statistic,Paired t p-Value,Wilcoxon W-Statistic,Wilcoxon p-Value,Cohen's d Effect Size,Effect Classification,Practical Assessment,Statistical Significance
+1000,42000,21.515,±2.3741,7.9528,±2.2028,13.5623,±2.7693,9.5988,6.259080573948874e-21,87399.0,7.32248953750589e-71,0.304,SMALL EFFECT,Statistically significant but modest practical improvement.,STATISTICALLY SIGNIFICANT

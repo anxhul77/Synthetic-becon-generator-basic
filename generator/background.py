@@ -11,7 +11,7 @@ class UniformBackground(BackgroundModel):
         self.baseline = float(baseline)
 
     def render(self, width: int, height: int) -> np.ndarray:
-        return np.full((height, width), self.baseline, dtype=np.float64)
+        return np.full((height, width), self.baseline, dtype=np.float32)
 
 class GradientBackground(BackgroundModel):
     """Linear gradient background illumination B(x, y) = B0 + a*x + b*y."""
@@ -21,7 +21,7 @@ class GradientBackground(BackgroundModel):
         self.b = float(b)
 
     def render(self, width: int, height: int) -> np.ndarray:
-        x = np.arange(width, dtype=np.float64)
-        y = np.arange(height, dtype=np.float64)
+        x = np.arange(width, dtype=np.float32)
+        y = np.arange(height, dtype=np.float32)
         radiance = self.baseline + (self.a * x)[None, :] + (self.b * y)[:, None]
         return np.maximum(0.0, radiance)

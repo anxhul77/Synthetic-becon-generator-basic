@@ -1,0 +1,11 @@
+Requirement,Test Condition,Measured Metric,Pass Criterion,Status
+2000x2000 Screen,Virtual Screen Render,Rendered Resolution: 2000x2000,Rendered resolution >= 2000x2000,PASS
+640x480 Camera,Monochrome Input Stream,Sensor Size: 640x480,Input resolution == 640x480,PASS
+4°x3° FOV,Default Camera Setup,FOV: 4.0°x3.0°,FOV_x == 4.0° and FOV_y == 3.0°,PASS
+30 Hz Update,Closed-Loop Sampling Run,Camera Frame Rate: 30 Hz,Update Rate >= 30 Hz,PASS
+>=20 FPS Processing,Full Pipeline Execution,End-to-End Throughput: 130.3 FPS,End-to-End Throughput >= 20.0 FPS,PASS
+Acquisition Time,Random Initial Target,Time to Lock: 0.000 s,Time to Lock <= 2.0 s,PASS
+Tracking Error,Moving Target Trajectory,Pixel RMSE: 0.49 px,Pixel RMSE <= 10.0 px,PASS
+Target Loss,300-Frame Sequence,Loss Percentage: 0.0%,Loss Percentage < 5.0%,PASS
+Reacquisition,15-Frame Beacon Fade,Recovery Time: 0.533 s,Recovery Time <= 1.0 s,PASS
+PTZ Constraints,Maximum Command Slew,Max Rate: 5.0°/s,Rate within 5.0-10.0°/s limit,PASS
